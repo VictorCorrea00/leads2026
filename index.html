@@ -1,1741 +1,1078 @@
 <!DOCTYPE html>
-<html lang="es" class="h-full bg-slate-950 text-slate-100">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🇺🇾 Dashboard B2B Leads Uruguay | Web Design Prospector</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🇺🇾 Leads Uruguay 2026 - Venta de Páginas Web</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: { 50: '#f0fdf4', 500: '#22c55e', 600: '#16a34a', 700: '#15803d' },
-            dark: { 800: '#1e293b', 900: '#0f172a', 950: '#020617' }
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    /* Custom scrollbar */
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-track { background: #0f172a; }
-    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #475569; }
-    .badge-alta { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
-    .badge-media { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
-    .badge-baja { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
   </style>
 </head>
-<body class="h-full flex flex-col font-sans antialiased">
+<body class="bg-slate-950 text-slate-100 min-h-screen">
 
-  <!-- Top Navigation Bar -->
-  <header class="bg-slate-900/90 backdrop-blur border-b border-slate-800 sticky top-0 z-30 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
-    <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center text-xl shadow-lg shadow-emerald-500/20">
-        🇺🇾
-      </div>
-      <div>
-        <h1 class="text-xl font-bold text-white flex items-center gap-2">
-          Leads Uruguay <span class="text-xs bg-emerald-500/20 text-emerald-400 font-semibold px-2 py-0.5 rounded-full border border-emerald-500/30">78 Negocios Verificados</span>
-        </h1>
-        <p class="text-xs text-slate-400">Prospector Comercial para Venta de Sitios Web, E-commerce y Turneros</p>
-      </div>
-    </div>
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/90 sticky top-0 z-40 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/30">
+            <i class="fa-solid fa-laptop-code text-white text-lg"></i>
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <h1 class="text-xl font-bold text-white tracking-tight">Leads Uruguay 2026</h1>
+              <span class="text-xs bg-blue-500/20 text-blue-400 font-semibold px-2.5 py-0.5 rounded-full border border-blue-500/30">50 Leads Calientes</span>
+            </div>
+            <p class="text-xs text-slate-400">Venta Exclusiva de Páginas Web & Landing Pages (Ticket $400 - $5.000+ USD)</p>
+          </div>
+        </div>
 
-    <!-- Quick Stats in Header -->
-    <div class="flex items-center gap-2 sm:gap-4">
-      <button onclick="exportCSV()" class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-2 border border-slate-700 transition">
-        <i class="fa-solid fa-file-csv text-emerald-400 text-sm"></i> Exportar CSV
-      </button>
-      <button onclick="copyAllPhones()" class="px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center gap-2 shadow-lg shadow-emerald-600/30 transition">
-        <i class="fa-solid fa-phone"></i> Copiar Teléfonos
-      </button>
+        <!-- Metric badges -->
+        <div class="flex items-center space-x-2 overflow-x-auto pb-1 md:pb-0 text-xs">
+          <div class="bg-slate-800/80 border border-slate-700 px-3 py-1.5 rounded-lg text-center">
+            <span class="text-slate-400 block text-[10px] uppercase">Construcción</span>
+            <span class="font-bold text-amber-400">15 leads</span>
+          </div>
+          <div class="bg-slate-800/80 border border-slate-700 px-3 py-1.5 rounded-lg text-center">
+            <span class="text-slate-400 block text-[10px] uppercase">Eventos</span>
+            <span class="font-bold text-pink-400">12 leads</span>
+          </div>
+          <div class="bg-slate-800/80 border border-slate-700 px-3 py-1.5 rounded-lg text-center">
+            <span class="text-slate-400 block text-[10px] uppercase">Salud & Dental</span>
+            <span class="font-bold text-emerald-400">12 leads</span>
+          </div>
+          <div class="bg-slate-800/80 border border-slate-700 px-3 py-1.5 rounded-lg text-center">
+            <span class="text-slate-400 block text-[10px] uppercase">B2B & Clima</span>
+            <span class="font-bold text-cyan-400">11 leads</span>
+          </div>
+          <button onclick="exportCSV()" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-3.5 py-2 rounded-lg flex items-center space-x-1.5 transition shadow-sm">
+            <i class="fa-solid fa-file-csv"></i>
+            <span>Exportar CSV</span>
+          </button>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Main Content Layout -->
-  <main class="flex-1 max-w-[1600px] w-full mx-auto p-4 sm:p-6 flex flex-col gap-6">
-
-    <!-- KPI Summary Grid -->
-    <section class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
-      <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 flex flex-col">
-        <span class="text-xs font-medium text-slate-400">Total Leads Reales</span>
-        <span class="text-2xl font-bold text-white mt-1" id="statTotal">78</span>
-        <span class="text-[11px] text-emerald-400 mt-1 flex items-center gap-1"><i class="fa-solid fa-check"></i> 100% Verificados</span>
-      </div>
-
-      <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 flex flex-col">
-        <span class="text-xs font-medium text-slate-400">Prioridad Alta</span>
-        <span class="text-2xl font-bold text-rose-400 mt-1" id="statAlta">64</span>
-        <span class="text-[11px] text-rose-300/80 mt-1 flex items-center gap-1"><i class="fa-solid fa-fire"></i> Leads Calientes</span>
-      </div>
-
-      <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 flex flex-col">
-        <span class="text-xs font-medium text-slate-400">Nichos Comerciales</span>
-        <span class="text-2xl font-bold text-cyan-400 mt-1">7</span>
-        <span class="text-[11px] text-cyan-300/80 mt-1">Moda, Gastro, Salud, etc.</span>
-      </div>
-
-      <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 flex flex-col">
-        <span class="text-xs font-medium text-slate-400">Montevideo</span>
-        <span class="text-2xl font-bold text-indigo-400 mt-1">62</span>
-        <span class="text-[11px] text-indigo-300/80 mt-1">Pocitos, Cordón, Carrasco</span>
-      </div>
-
-      <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 flex flex-col">
-        <span class="text-xs font-medium text-slate-400">Maldonado / PDE</span>
-        <span class="text-2xl font-bold text-amber-400 mt-1">9</span>
-        <span class="text-[11px] text-amber-300/80 mt-1">Punta del Este & La Barra</span>
-      </div>
-
-      <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 flex flex-col">
-        <span class="text-xs font-medium text-slate-400">Canelones</span>
-        <span class="text-2xl font-bold text-purple-400 mt-1">7</span>
-        <span class="text-[11px] text-purple-300/80 mt-1">Ciudad de la Costa</span>
-      </div>
-    </section>
-
-    <!-- Filters & Search Toolbar -->
-    <section class="bg-slate-900/70 border border-slate-800 rounded-xl p-4 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex-1 min-w-[280px] relative">
-        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-sm"></i>
-        <input type="text" id="searchInput" oninput="applyFilters()" placeholder="Buscar por negocio, Instagram (@), barrio, dolor..." class="w-full bg-slate-950/80 border border-slate-700/80 rounded-lg pl-10 pr-4 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition">
-      </div>
-
-      <div class="flex flex-wrap items-center gap-2.5">
-        <!-- Niche Filter -->
-        <select id="nicheFilter" onchange="applyFilters()" class="bg-slate-950/80 border border-slate-700/80 rounded-lg px-3 py-2 text-xs font-medium text-slate-300 focus:outline-none focus:border-emerald-500">
-          <option value="ALL">Todos los Nichos (7)</option>
-          <option value="Moda">👗 Moda & Showrooms</option>
-          <option value="Gastronomía">☕ Gastronomía & Cafés</option>
-          <option value="Estética">💇‍♀️ Estética & Belleza</option>
-          <option value="Fitness">💪 Fitness & Pilates</option>
-          <option value="Salud">🩺 Salud & Odontología</option>
-          <option value="Mascotas">🐾 Mascotas & Pet Shops</option>
-          <option value="Otros">🌸 Otros & Talleres</option>
+  <!-- Controls: Search & Filters -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+    <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl shadow-xl space-y-4">
+      <div class="flex flex-col md:flex-row gap-3">
+        <div class="relative flex-1">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Buscar por negocio, barrio, teléfono, dolor o subcategoría..." 
+            class="w-full bg-slate-950 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition"
+            oninput="renderLeads()"
+          />
+        </div>
+        
+        <select id="priorityFilter" onchange="renderLeads()" class="bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-blue-500">
+          <option value="all">⚡ Todas las Prioridades</option>
+          <option value="Alta">🔥 Solo Prioridad Alta</option>
+          <option value="Media">⭐ Prioridad Media</option>
         </select>
+      </div>
 
-        <!-- Priority Filter -->
-        <select id="priorityFilter" onchange="applyFilters()" class="bg-slate-950/80 border border-slate-700/80 rounded-lg px-3 py-2 text-xs font-medium text-slate-300 focus:outline-none focus:border-emerald-500">
-          <option value="ALL">Todas las Prioridades</option>
-          <option value="ALTA">🔥 Prioridad ALTA</option>
-          <option value="MEDIA">⚡ Prioridad MEDIA</option>
-        </select>
-
-        <!-- Location Filter -->
-        <select id="zoneFilter" onchange="applyFilters()" class="bg-slate-950/80 border border-slate-700/80 rounded-lg px-3 py-2 text-xs font-medium text-slate-300 focus:outline-none focus:border-emerald-500">
-          <option value="ALL">Todas las Zonas</option>
-          <option value="Montevideo">Montevideo</option>
-          <option value="Pocitos">Pocitos / P. Carretas</option>
-          <option value="Carrasco">Carrasco</option>
-          <option value="Cordón">Cordón / P. Rodó</option>
-          <option value="Maldonado">Maldonado / PDE</option>
-          <option value="Canelones">Canelones / C. de la Costa</option>
-        </select>
-
-        <button onclick="resetFilters()" class="p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition" title="Restablecer filtros">
-          <i class="fa-solid fa-rotate-right text-xs"></i>
+      <!-- Niche Pills -->
+      <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+        <button onclick="setNiche('all')" class="niche-btn active px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-600 text-white transition" data-niche="all">
+          Todos los Sectores (50)
+        </button>
+        <button onclick="setNiche('Construcción')" class="niche-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition" data-niche="Construcción">
+          🏗️ Construcción, Reformas & Arquitectura (15)
+        </button>
+        <button onclick="setNiche('Eventos')" class="niche-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition" data-niche="Eventos">
+          💍 Eventos, Chacras & Fotografía (12)
+        </button>
+        <button onclick="setNiche('Salud')" class="niche-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition" data-niche="Salud">
+          🩺 Salud Privada, Odontología & Estética (12)
+        </button>
+        <button onclick="setNiche('B2B')" class="niche-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition" data-niche="B2B">
+          🏢 B2B, Paneles & Climatización (11)
         </button>
       </div>
-    </section>
+    </div>
 
-    <!-- Table Container -->
-    <section class="bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden shadow-2xl flex-1 flex flex-col">
-      <div class="overflow-x-auto flex-1">
-        <table class="w-full text-left border-collapse text-xs">
-          <thead>
-            <tr class="bg-slate-900 border-b border-slate-800 text-slate-400 uppercase tracking-wider font-semibold">
-              <th class="py-3.5 px-4 w-12 text-center">#</th>
-              <th class="py-3.5 px-4 min-w-[200px]">Negocio & Redes</th>
-              <th class="py-3.5 px-4 min-w-[140px]">Teléfono / WhatsApp</th>
-              <th class="py-3.5 px-4 min-w-[180px]">Ubicación & Maps</th>
-              <th class="py-3.5 px-4 min-w-[150px]">Nicho / Categoría</th>
-              <th class="py-3.5 px-4 min-w-[260px]">Punto de Dolor Detectado</th>
-              <th class="py-3.5 px-4 w-28 text-center">Prioridad</th>
-              <th class="py-3.5 px-4 w-32 text-center">Acciones</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody" class="divide-y divide-slate-800/60">
-            <!-- Dynamically populated rows -->
-          </tbody>
-        </table>
+    <!-- Results Counter -->
+    <div class="flex items-center justify-between text-xs text-slate-400 px-1">
+      <div>Mostrando <span id="count" class="font-bold text-white">50</span> leads calificados</div>
+      <div class="flex items-center space-x-3">
+        <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-emerald-500 mr-1.5"></span>WhatsApp Directo</span>
+        <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-rose-500 mr-1.5"></span>Google Maps</span>
       </div>
+    </div>
 
-      <!-- Table Footer / Count -->
-      <div class="bg-slate-900/80 border-t border-slate-800 px-4 py-3 text-xs text-slate-400 flex justify-between items-center">
-        <span id="filteredCount">Mostrando 78 de 78 leads</span>
-        <span class="text-slate-500">Haz clic en WhatsApp para abrir chat directo o en Maps para ver ubicación exacta</span>
-      </div>
-    </section>
-
+    <!-- Cards Grid -->
+    <div id="leadsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    </div>
   </main>
 
-  <!-- Modal for Lead Detail & WhatsApp Pitch Copy -->
-  <div id="leadModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-2xl w-full p-6 relative shadow-2xl flex flex-col gap-5">
-      <button onclick="closeModal()" class="absolute right-4 top-4 text-slate-400 hover:text-white text-lg">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="flex items-start gap-4">
-        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl font-bold" id="modalIcon">
-          🏢
+  <!-- Modal for Pitch -->
+  <div id="pitchModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-xl w-full p-6 space-y-4 shadow-2xl">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div>
+            <h3 id="modalLeadName" class="font-bold text-white text-base">Nombre del Negocio</h3>
+            <p id="modalLeadSub" class="text-xs text-slate-400">Subcategoría</p>
+          </div>
         </div>
-        <div>
-          <h3 class="text-lg font-bold text-white flex items-center gap-2" id="modalName">Nombre del Negocio</h3>
-          <p class="text-xs text-slate-400 mt-0.5" id="modalSubcat">Subcategoría - Ubicación</p>
-        </div>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
       </div>
 
-      <!-- Quick Info Pill Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 text-xs">
-        <div>
-          <span class="text-slate-500 block">Instagram:</span>
-          <a href="#" target="_blank" id="modalIGLink" class="font-medium text-sky-400 hover:underline">@handle</a>
-        </div>
-        <div>
-          <span class="text-slate-500 block">WhatsApp:</span>
-          <span id="modalPhone" class="font-medium text-emerald-400">09X XXX XXX</span>
-        </div>
-        <div>
-          <span class="text-slate-500 block">Estado Web:</span>
-          <span id="modalWeb" class="font-medium text-amber-400">Sin web</span>
-        </div>
-      </div>
-
-      <!-- Pain Point -->
-      <div class="bg-rose-950/20 border border-rose-800/40 rounded-xl p-3.5 text-xs">
-        <span class="font-semibold text-rose-400 flex items-center gap-1.5 mb-1">
-          <i class="fa-solid fa-triangle-exclamation"></i> Punto de Dolor Principal:
-        </span>
-        <p class="text-slate-300" id="modalPain">Descripción del dolor...</p>
-      </div>
-
-      <!-- WhatsApp Script Box -->
-      <div class="flex flex-col gap-2">
-        <div class="flex justify-between items-center">
-          <span class="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-            <i class="fa-brands fa-whatsapp text-emerald-400"></i> Mensaje de Outreach Personalizado:
-          </span>
-          <button onclick="copyPitchText()" id="copyPitchBtn" class="text-xs text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-1">
-            <i class="fa-regular fa-copy"></i> Copiar Mensaje
+      <div class="space-y-2">
+        <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Pitch de WhatsApp Personalizado (Tono Uruguayo):</label>
+        <div class="relative">
+          <textarea id="modalPitchText" rows="7" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 font-mono leading-relaxed focus:outline-none focus:border-blue-500" readonly></textarea>
+          <button onclick="copyPitch()" class="absolute right-2.5 top-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs px-2.5 py-1 rounded-md font-semibold transition flex items-center space-x-1">
+            <i class="fa-solid fa-copy"></i>
+            <span id="copyBtnText">Copiar</span>
           </button>
         </div>
-        <textarea id="modalPitch" rows="6" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-300 font-mono focus:outline-none focus:border-emerald-500 resize-none leading-relaxed"></textarea>
       </div>
 
-      <!-- Modal Actions -->
-      <div class="flex items-center justify-end gap-3 pt-2">
-        <a href="#" target="_blank" id="modalMapsBtn" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-2 border border-slate-700 transition">
-          <i class="fa-solid fa-location-dot text-rose-400"></i> Ver en Google Maps
-        </a>
-        <a href="#" target="_blank" id="modalSendWABtn" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center gap-2 shadow-lg shadow-emerald-600/30 transition">
-          <i class="fa-brands fa-whatsapp"></i> Abrir Chat en WhatsApp
+      <div class="flex items-center justify-between pt-2">
+        <a id="modalWaBtn" href="#" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center space-x-2 transition shadow-lg shadow-emerald-600/20">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>Abrir Chat con Mensaje Pre-cargado</span>
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Application Logic & Leads Dataset -->
   <script>
-    const leadsData = [
-      // 👗 MODA & SHOWROOMS
-      {
-        id: 1,
-        name: "Atrix Showroom",
-        handle: "@atrixuy",
-        phone: "097 441 444",
-        rawPhone: "59897441444",
-        address: "Av. Uruguay 1291 esq. Yaguarón",
-        zone: "Centro / Cordón",
-        dept: "Montevideo",
-        niche: "Moda",
-        subcat: "Showroom Multimarca Femenina",
-        webStatus: "Catálogo estático sin checkout",
-        pain: "Alto volumen diario de consultas de precios y stock respondidas manualmente 1 a 1 por WhatsApp. Pierden el 70% de compras nocturnas.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 2,
-        name: "Diversité Showroom",
-        handle: "@diversite.uy",
-        phone: "095 573 867",
-        rawPhone: "59895573867",
-        address: "Av. Luis Alberto de Herrera 1383 Apto 410",
-        zone: "Pocitos",
-        dept: "Montevideo",
-        niche: "Moda",
-        subcat: "Showroom Indumentaria & Calzado",
-        webStatus: "Catálogo básico sin checkout",
-        pain: "Agenda manual de visitas a showroom en apartamento y verificación manual de prendas disponibles.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 3,
-        name: "Maharani Uruguay",
-        handle: "@maharani_uy",
-        phone: "099 369 494",
-        rawPhone: "59899369494",
-        address: "Bv. Artigas y Canelones",
-        zone: "Cordón / Punta del Este",
-        dept: "Montevideo",
-        niche: "Moda",
-        subcat: "Showroom Moda Boho-Chic",
-        webStatus: "Linktree a WhatsApp",
-        pain: "Venta asistida manual para envíos a todo el país y confirmación de stock de prendas únicas en chat.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 4,
-        name: "Nazaria Sur",
-        handle: "@nazariasur",
-        phone: "WhatsApp en Bio",
-        rawPhone: "59898000000",
-        address: "Pocitos / Punta Carretas",
-        zone: "Pocitos",
-        dept: "Montevideo",
-        niche: "Moda",
-        subcat: "Joyería de Autor & Accesorios",
-        webStatus: "Sin tienda online",
-        pain: "Agenda manual de visitas y cotización por DM que frena compras por impulso en clientes ABC1.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 5,
-        name: "Tu Vestidor",
-        handle: "@tuvestidor.uy",
-        phone: "095 064 817",
-        rawPhone: "59895064817",
-        address: "Circunvalación Durango 348",
-        zone: "Ciudad Vieja",
-        dept: "Montevideo",
-        niche: "Moda",
-        subcat: "Showroom Diseño Exclusivo",
-        webStatus: "Historias destacadas de IG",
-        pain: "Pedidos, cálculo de flete (DAC/Mirtrans) y comprobantes procesados manualmente por chat.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 6,
-        name: "Actitud Sur",
-        handle: "@actitudsur",
-        phone: "092 919 338",
-        rawPhone: "59892919338",
-        address: "Solano García 2463",
-        zone: "Punta Carretas",
-        dept: "Montevideo",
-        niche: "Moda",
-        subcat: "Boutique Indumentaria Femenina",
-        webStatus: "Sin e-commerce activo",
-        pain: "Envío manual de fotos de percheros y talles a clientas que consultan por WhatsApp.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 7,
-        name: "Seven Vestimenta",
-        handle: "@seven_vestimenta",
-        phone: "094 142 927",
-        rawPhone: "59894142927",
-        address: "Centro / Cordón",
-        zone: "Cordón",
-        dept: "Montevideo",
-        niche: "Moda",
-        subcat: "Indumentaria Urbana Casual",
-        webStatus: "Sin web (100% redes)",
-        pain: "Gestión desordenada de envíos por agencia y comprobantes de giros por chat.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 8,
-        name: "Sasha Vestidos",
-        handle: "@sasha.uy",
-        phone: "091 659 921",
-        rawPhone: "59891659921",
-        address: "Pocitos / Parque Batlle",
-        zone: "Pocitos",
-        dept: "Montevideo",
-        niche: "Moda",
-        subcat: "Alquiler Vestidos de Fiesta",
-        webStatus: "Web básica informativa",
-        pain: "Agenda de pruebas de vestidos llevada en chat o papel; alto riesgo de solapamiento.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 9,
-        name: "Acqua-Cereza",
-        handle: "@acquacereza",
-        phone: "098 957 275",
-        rawPhone: "59898957275",
-        address: "Arenal Grande 2481",
-        zone: "La Comercial",
-        dept: "Montevideo",
-        niche: "Moda",
-        subcat: "Ropa Femenina Plus Size",
-        webStatus: "Solo WhatsApp Business",
-        pain: "Asesoramiento de medidas en cm realizado mensaje por mensaje para cada prenda.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 10,
-        name: "Indumentaria V&E",
-        handle: "@indumentaria_ve_uy",
-        phone: "096 810 016",
-        rawPhone: "59896810016",
-        address: "Sayago / Lavalleja",
-        zone: "Sayago",
-        dept: "Montevideo",
-        niche: "Moda",
-        subcat: "Ropa Multimarca Femenina",
-        webStatus: "Solo catálogo WhatsApp",
-        pain: "Falta de control de stock en tiempo real; riesgo continuo de vender prendas agotadas.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 11,
-        name: "Victoria Liguori",
-        handle: "@victorialiguoridesign",
-        phone: "098 111 606",
-        rawPhone: "59898111606",
-        address: "Cnel. Alegre 1324",
-        zone: "Pocitos",
-        dept: "Montevideo",
-        niche: "Moda",
-        subcat: "Marroquinería & Cuero",
-        webStatus: "Catálogo simple",
-        pain: "Asesoramiento sobre variantes de color y personalizaciones llevado en hilos largos de WhatsApp.",
-        priority: "MEDIA",
-        template: "A"
-      },
-      {
-        id: 12,
-        name: "Panthai Pocitos",
-        handle: "@panthaiuy",
-        phone: "098 234 741",
-        rawPhone: "59898234741",
-        address: "26 de Marzo 1029",
-        zone: "Pocitos",
-        dept: "Montevideo",
-        niche: "Moda",
-        subcat: "Boutique Femenina",
-        webStatus: "Web informativa básica",
-        pain: "Consultas continuas sobre disponibilidad física en mostrador vs despachos a domicilio.",
-        priority: "MEDIA",
-        template: "A"
-      },
+    const leads = [
+  {
+    "id": 1,
+    "name": "Urban House Construcciones",
+    "niche": "Construcción",
+    "sub": "Steel Framing & Llave en mano",
+    "instagram": "@urbanhouse.uy",
+    "igUrl": "https://www.instagram.com/urbanhouse.uy",
+    "phone": "096 800 288",
+    "waUrl": "https://wa.me/59896800288",
+    "location": "Montevideo (Cobertura Nal.)",
+    "webStatus": "Web básica desactualizada",
+    "painPoint": "Promocionan casas de USD 1.000/m² sin cotizador interactivo ni renders 3D de modelos.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Urban+House+Construcciones+Montevideo+(Cobertura+Nal.)"
+  },
+  {
+    "id": 2,
+    "name": "Albertoni Construcciones",
+    "niche": "Construcción",
+    "sub": "Reciclajes y Obras Civiles",
+    "instagram": "Directorio / Web",
+    "igUrl": "https://www.instagram.com",
+    "phone": "098 041 454",
+    "waUrl": "https://wa.me/59898041454",
+    "location": "Montevideo - Reducto",
+    "webStatus": "Web rígida de 2010",
+    "painPoint": "30 años de trayectoria con web ilegible en celular, sin fotos antes/después de reformas.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Albertoni+Construcciones+Montevideo+-+Reducto"
+  },
+  {
+    "id": 3,
+    "name": "Rinnovare Pro Reforma",
+    "niche": "Construcción",
+    "sub": "Reformas Integrales Baños/Cocinas",
+    "instagram": "@rinnovareproreforma",
+    "igUrl": "https://www.instagram.com/rinnovareproreforma",
+    "phone": "099 936 434",
+    "waUrl": "https://wa.me/59899936434",
+    "location": "Montevideo - Brazo Oriental",
+    "webStatus": "Web lenta y confusa",
+    "painPoint": "Venden reformas de $3k-$15k USD; su web no tiene paquetes claros ni agendamiento.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Rinnovare+Pro+Reforma+Montevideo+-+Brazo+Oriental"
+  },
+  {
+    "id": 4,
+    "name": "Basis Reformas & Design",
+    "niche": "Construcción",
+    "sub": "Reformas de Baño y Cocina",
+    "instagram": "@basismvd",
+    "igUrl": "https://www.instagram.com/basismvd",
+    "phone": "093 932 741",
+    "waUrl": "https://wa.me/59893932741",
+    "location": "Montevideo - Pocitos / Cordón",
+    "webStatus": "Web plantilla genérica",
+    "painPoint": "No cuenta con sliders interactivos de antes/después ni catálogo de cerámicas integradas.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Basis+Reformas+&+Design+Montevideo+-+Pocitos+/+Cordón"
+  },
+  {
+    "id": 5,
+    "name": "JDS Construcciones",
+    "niche": "Construcción",
+    "sub": "Reformas, Estructuras y Albañilería",
+    "instagram": "Facebook oficial",
+    "igUrl": "https://www.instagram.com",
+    "phone": "094 142 163",
+    "waUrl": "https://wa.me/59894142163",
+    "location": "Montevideo",
+    "webStatus": "**Sin sitio web**",
+    "painPoint": "Empresa formal con RUT que pierde clientes de Carrasco y Pocitos por no figurar en Google.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=JDS+Construcciones+Montevideo"
+  },
+  {
+    "id": 6,
+    "name": "Pietropinto Estudio",
+    "niche": "Construcción",
+    "sub": "Arquitectura y Regularización BPS",
+    "instagram": "@pietropinto_arquitectura",
+    "igUrl": "https://www.instagram.com/pietropinto_arquitectura",
+    "phone": "099 459 881",
+    "waUrl": "https://wa.me/59899459881",
+    "location": "Montevideo - Pocitos / Buceo",
+    "webStatus": "Web densa en texto",
+    "painPoint": "Trámites BPS y proyectos de alto valor en web tipo blog sin fotos de arquitectura moderna.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pietropinto+Estudio+Montevideo+-+Pocitos+/+Buceo"
+  },
+  {
+    "id": 7,
+    "name": "Puppo Arquitectos",
+    "niche": "Construcción",
+    "sub": "Arquitectura y Casas Modulares",
+    "instagram": "@puppoarquitectos",
+    "igUrl": "https://www.instagram.com/puppoarquitectos",
+    "phone": "091 774 444",
+    "waUrl": "https://wa.me/59891774444",
+    "location": "Maldonado - Punta del Este",
+    "webStatus": "Web estática anticuada",
+    "painPoint": "Desarrollan casas de $50k-$300k USD para extranjeros sin landings bilingües de captación.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Puppo+Arquitectos+Maldonado+-+Punta+del+Este"
+  },
+  {
+    "id": 8,
+    "name": "Levande Arquitectura",
+    "niche": "Construcción",
+    "sub": "Estudio y Dirección de Obra",
+    "instagram": "@levande.uy",
+    "igUrl": "https://www.instagram.com/levande.uy",
+    "phone": "098 014 170",
+    "waUrl": "https://wa.me/59898014170",
+    "location": "Maldonado - Punta Ballena",
+    "webStatus": "Web lenta y confusa",
+    "painPoint": "Obras en barrios privados sin llamados a la acción claros hacia WhatsApp.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Levande+Arquitectura+Maldonado+-+Punta+Ballena"
+  },
+  {
+    "id": 9,
+    "name": "Ciapessoni Construcciones",
+    "niche": "Construcción",
+    "sub": "Arquitectura y Obra Nueva",
+    "instagram": "Redes profesionales",
+    "igUrl": "https://www.instagram.com",
+    "phone": "095 914 870",
+    "waUrl": "https://wa.me/59895914870",
+    "location": "Montevideo - Pocitos",
+    "webStatus": "Web rígida de 2012",
+    "painPoint": "10 años de trayectoria con web que no refleja el nivel estético de sus terminaciones.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Ciapessoni+Construcciones+Montevideo+-+Pocitos"
+  },
+  {
+    "id": 10,
+    "name": "Uno Arquitectos",
+    "niche": "Construcción",
+    "sub": "Arquitectura Comercial y Vivienda",
+    "instagram": "Presencia institucional",
+    "igUrl": "https://www.instagram.com",
+    "phone": "091 844 446",
+    "waUrl": "https://wa.me/59891844446",
+    "location": "Montevideo - Carrasco / Prado",
+    "webStatus": "Web técnica fría",
+    "painPoint": "Cobertura nacional sin landing de captación para inversores y habilitaciones comerciales.",
+    "priority": "Media",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Uno+Arquitectos+Montevideo+-+Carrasco+/+Prado"
+  },
+  {
+    "id": 11,
+    "name": "Echarte Arquitectura",
+    "niche": "Construcción",
+    "sub": "Módulos Habitacionales & Steel",
+    "instagram": "Redes profesionales",
+    "igUrl": "https://www.instagram.com",
+    "phone": "099 200 601",
+    "waUrl": "https://wa.me/59899200601",
+    "location": "Montevideo / Colonia",
+    "webStatus": "Web desactualizada",
+    "painPoint": "Auge de casas transportables ($5k-$35k USD) sin configurador visual de tipologías.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Echarte+Arquitectura+Montevideo+/+Colonia"
+  },
+  {
+    "id": 12,
+    "name": "Pinturas y Acabados JER",
+    "niche": "Construcción",
+    "sub": "Trabajos en Altura & Pintura",
+    "instagram": "Facebook oficial",
+    "igUrl": "https://www.instagram.com",
+    "phone": "096 151 897",
+    "waUrl": "https://wa.me/59896151897",
+    "location": "Montevideo",
+    "webStatus": "**Sin sitio web**",
+    "painPoint": "Contratos de $2k-$15k USD; consorcios de edificios descartan presupuestos sin web oficial.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pinturas+y+Acabados+JER+Montevideo"
+  },
+  {
+    "id": 13,
+    "name": "Concepto Tratamientos Edil.",
+    "niche": "Construcción",
+    "sub": "Impermeabilizaciones & Fachadas",
+    "instagram": "Directorios locales",
+    "igUrl": "https://www.instagram.com",
+    "phone": "099 406 214",
+    "waUrl": "https://wa.me/59899406214",
+    "location": "Montevideo - Pocitos Nuevo",
+    "webStatus": "Web lenta anticuada",
+    "painPoint": "Trabajos de azoteas de $1.500-$8.000 USD sin cotizador express por metro cuadrado.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Concepto+Tratamientos+Edil.+Montevideo+-+Pocitos+Nuevo"
+  },
+  {
+    "id": 14,
+    "name": "Gerardo Zeballos Impermeab.",
+    "niche": "Construcción",
+    "sub": "Reparación de Techos y Membranas",
+    "instagram": "Guías de la Costa",
+    "igUrl": "https://www.instagram.com",
+    "phone": "099 840 399",
+    "waUrl": "https://wa.me/59899840399",
+    "location": "Canelones - Solymar / Lagomar",
+    "webStatus": "**Sin sitio web**",
+    "painPoint": "Pierden a vecinos de la costa con filtraciones urgentes que buscan auxilio en Google.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Gerardo+Zeballos+Impermeab.+Canelones+-+Solymar+/+Lagomar"
+  },
+  {
+    "id": 15,
+    "name": "Vision Este Inmobiliaria",
+    "niche": "Construcción",
+    "sub": "Inmobiliaria Boutique de Lujo",
+    "instagram": "Redes sociales",
+    "igUrl": "https://www.instagram.com",
+    "phone": "+598 95 297 599",
+    "waUrl": "https://wa.me/59895297599",
+    "location": "Maldonado - La Barra / Manantiales",
+    "webStatus": "Web tosca y lenta",
+    "painPoint": "Alquileres de $5k-$30k USD/quincena en web que no brinda una experiencia visual de lujo.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Vision+Este+Inmobiliaria+Maldonado+-+La+Barra+/+Manantiales"
+  },
+  {
+    "id": 16,
+    "name": "Chacra La Rinconada",
+    "niche": "Eventos",
+    "sub": "Chacra de Bodas y 15 Años",
+    "instagram": "@chacralarinconada",
+    "igUrl": "https://www.instagram.com/chacralarinconada",
+    "phone": "094 465 065",
+    "waUrl": "https://wa.me/59894465065",
+    "location": "Montevideo - Ruta 5 Km 14.8",
+    "webStatus": "Web desactualizada",
+    "painPoint": "12 hectáreas de parque y capilla sin tour virtual 360° ni botón flotante para novias.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Chacra+La+Rinconada+Montevideo+-+Ruta+5+Km+14.8"
+  },
+  {
+    "id": 17,
+    "name": "Chacra La Cachimba",
+    "niche": "Eventos",
+    "sub": "Chacra para Bodas y Sociales",
+    "instagram": "@chacralacachimba",
+    "igUrl": "https://www.instagram.com/chacralacachimba",
+    "phone": "097 505 290",
+    "waUrl": "https://wa.me/59897505290",
+    "location": "Canelones - Toledo",
+    "webStatus": "Web desactualizada",
+    "painPoint": "Depende de portales; le falta landing tipo \"Wedding Experience\" con videos de parejas.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Chacra+La+Cachimba+Canelones+-+Toledo"
+  },
+  {
+    "id": 18,
+    "name": "Chacra Don Andrés",
+    "niche": "Eventos",
+    "sub": "Eventos Sociales & Granja",
+    "instagram": "@chacradonandres",
+    "igUrl": "https://www.instagram.com/chacradonandres",
+    "phone": "092 504 871",
+    "waUrl": "https://wa.me/59892504871",
+    "location": "Las Piedras / Montevideo",
+    "webStatus": "Web sobrecargada",
+    "painPoint": "Mezcla paseos escolares con bodas; urge landing exclusiva para casamientos de alto valor.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Chacra+Don+Andrés+Las+Piedras+/+Montevideo"
+  },
+  {
+    "id": 19,
+    "name": "Chacra La Tradición",
+    "niche": "Eventos",
+    "sub": "Fiestas y Casamientos",
+    "instagram": "@chacralatradicion",
+    "igUrl": "https://www.instagram.com/chacralatradicion",
+    "phone": "096 473 502",
+    "waUrl": "https://wa.me/59896473502",
+    "location": "Montevideo Rural - Melilla",
+    "webStatus": "Solo redes / estática",
+    "painPoint": "25 años de trayectoria dependiendo de directorios comisionistas en lugar de web propia.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Chacra+La+Tradición+Montevideo+Rural+-+Melilla"
+  },
+  {
+    "id": 20,
+    "name": "Finca Clara",
+    "niche": "Eventos",
+    "sub": "Chacra de Casamientos y 15s",
+    "instagram": "@fincaclarauy",
+    "igUrl": "https://www.instagram.com/fincaclarauy",
+    "phone": "092 377 992",
+    "waUrl": "https://wa.me/59892377992",
+    "location": "Canelones - Barros Blancos",
+    "webStatus": "Linktree genérico",
+    "painPoint": "Redirigen su tráfico a Linktree, perdiendo cientos de búsquedas en Google de Canelones.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Finca+Clara+Canelones+-+Barros+Blancos"
+  },
+  {
+    "id": 21,
+    "name": "Haras Carrasco",
+    "niche": "Eventos",
+    "sub": "Salón de Fiestas y Catering",
+    "instagram": "@harascarrasco",
+    "igUrl": "https://www.instagram.com/harascarrasco",
+    "phone": "094 418 152",
+    "waUrl": "https://wa.me/59894418152",
+    "location": "Canelones - Solymar",
+    "webStatus": "Web básica desactualizada",
+    "painPoint": "Catering de autor sin botón de degustación de menú ni galería de ambientación nocturna.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Haras+Carrasco+Canelones+-+Solymar"
+  },
+  {
+    "id": 22,
+    "name": "Aventurina Eventos",
+    "niche": "Eventos",
+    "sub": "Salón Casona para Bodas Íntimas",
+    "instagram": "@aventurinaeventos",
+    "igUrl": "https://www.instagram.com/aventurinaeventos",
+    "phone": "094 542 401",
+    "waUrl": "https://wa.me/59894542401",
+    "location": "Montevideo - Prado",
+    "webStatus": "**Sin sitio web**",
+    "painPoint": "Casona de estilo sin web propia; pierden parejas que buscan salones íntimos en Prado.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Aventurina+Eventos+Montevideo+-+Prado"
+  },
+  {
+    "id": 23,
+    "name": "Jaminton Fotografías",
+    "niche": "Eventos",
+    "sub": "Fotógrafo de Bodas y 15 Años",
+    "instagram": "@jamintonfotografias",
+    "igUrl": "https://www.instagram.com/jamintonfotografias",
+    "phone": "091 209 024",
+    "waUrl": "https://wa.me/59891209024",
+    "location": "Montevideo y Canelones",
+    "webStatus": "Web lenta sin WebP",
+    "painPoint": "Fotos pesadas que tardan en cargar en móvil; no desglosa paquetes de cobertura.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Jaminton+Fotografías+Montevideo+y+Canelones"
+  },
+  {
+    "id": 24,
+    "name": "Maca Arboleya Fotografía",
+    "niche": "Eventos",
+    "sub": "Fotografía Documental de Bodas",
+    "instagram": "@macaarboleya",
+    "igUrl": "https://www.instagram.com/macaarboleya",
+    "phone": "099 388 401",
+    "waUrl": "https://wa.me/59899388401",
+    "location": "Montevideo / Punta del Este",
+    "webStatus": "Web portafolio frío",
+    "painPoint": "Depende de formularios por correo; falta botón flotante de consulta de fechas en vivo.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Maca+Arboleya+Fotografía+Montevideo+/+Punta+del+Este"
+  },
+  {
+    "id": 25,
+    "name": "Diego Martínez Fotografía",
+    "niche": "Eventos",
+    "sub": "Fotógrafo Editorial de Bodas",
+    "instagram": "@diemartinezph",
+    "igUrl": "https://www.instagram.com/diemartinezph",
+    "phone": "099 499 466",
+    "waUrl": "https://wa.me/59899499466",
+    "location": "Montevideo / Punta del Este",
+    "webStatus": "Web sin embudo ágil",
+    "painPoint": "Sin desglose de valor agregado (tomas con dron, entrega de fotos para redes al día siguiente).",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Diego+Martínez+Fotografía+Montevideo+/+Punta+del+Este"
+  },
+  {
+    "id": 26,
+    "name": "ATP Catering & Eventos",
+    "niche": "Eventos",
+    "sub": "Catering para Bodas y 15s",
+    "instagram": "@atpcateringuy",
+    "igUrl": "https://www.instagram.com/atpcateringuy",
+    "phone": "091 628 334",
+    "waUrl": "https://wa.me/59891628334",
+    "location": "Montevideo / Canelones",
+    "webStatus": "Web básica en texto",
+    "painPoint": "Sin cartas de menú gourmet descargables en PDF ni cotizador por comensales.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=ATP+Catering+&+Eventos+Montevideo+/+Canelones"
+  },
+  {
+    "id": 27,
+    "name": "Deco Lorena Mayobre",
+    "niche": "Eventos",
+    "sub": "Ambientación y Diseño Floral",
+    "instagram": "@deco_lorenamayobre",
+    "igUrl": "https://www.instagram.com/deco_lorenamayobre",
+    "phone": "099 362 284",
+    "waUrl": "https://wa.me/59899362284",
+    "location": "Montevideo / Canelones",
+    "webStatus": "**Sin sitio web propio**",
+    "painPoint": "Dependen de Instagram; sin catálogo visual por estilos (Boho, Clásico, Campestre).",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Deco+Lorena+Mayobre+Montevideo+/+Canelones"
+  },
+  {
+    "id": 28,
+    "name": "BioSmile Odontología",
+    "niche": "Salud",
+    "sub": "Odontología Láser & Estética",
+    "instagram": "@biosmileuy",
+    "igUrl": "https://www.instagram.com/biosmileuy",
+    "phone": "093 937 824",
+    "waUrl": "https://wa.me/59893937824",
+    "location": "Montevideo - Carrasco",
+    "webStatus": "Web institucional vieja",
+    "painPoint": "Ubicados en pleno Carrasco; necesitan landing de alta gama para diseño de sonrisa.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=BioSmile+Odontología+Montevideo+-+Carrasco"
+  },
+  {
+    "id": 29,
+    "name": "Nappa Severino Ortodoncia",
+    "niche": "Salud",
+    "sub": "Ortodoncia Digital e Invisible",
+    "instagram": "@nappa.severino",
+    "igUrl": "https://www.instagram.com/nappa.severino",
+    "phone": "099 095 779",
+    "waUrl": "https://wa.me/59899095779",
+    "location": "Montevideo - Pocitos",
+    "webStatus": "Web rígida tradicional",
+    "painPoint": "Especialistas en alineadores invisibles sin comparador interactivo ni embudo directo.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nappa+Severino+Ortodoncia+Montevideo+-+Pocitos"
+  },
+  {
+    "id": 30,
+    "name": "ML Consultorio Odontológico",
+    "niche": "Salud",
+    "sub": "Implantes y Estética Dental",
+    "instagram": "@dra.mariana.landaberry",
+    "igUrl": "https://www.instagram.com/dra.mariana.landaberry",
+    "phone": "099 889 548",
+    "waUrl": "https://wa.me/59899889548",
+    "location": "Montevideo - Pocitos",
+    "webStatus": "Web plantilla básica",
+    "painPoint": "No refleja la autoridad médica ni los resultados de implantología en alta resolución.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=ML+Consultorio+Odontológico+Montevideo+-+Pocitos"
+  },
+  {
+    "id": 31,
+    "name": "Dra. Sofía Campanella",
+    "niche": "Salud",
+    "sub": "Odontología Integral & Blanqueamiento",
+    "instagram": "@dra.soficampanella",
+    "igUrl": "https://www.instagram.com/dra.soficampanella",
+    "phone": "099 610 121",
+    "waUrl": "https://wa.me/59899610121",
+    "location": "Montevideo - Tres Cruces",
+    "webStatus": "**Sin sitio web propio**",
+    "painPoint": "Consultorio en Torre del Congreso sin web; pierden todo el tráfico de Google Search.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Dra.+Sofía+Campanella+Montevideo+-+Tres+Cruces"
+  },
+  {
+    "id": 32,
+    "name": "LIVE Salud y Estética",
+    "niche": "Salud",
+    "sub": "Medicina Estética & Spa",
+    "instagram": "@liveestetica",
+    "igUrl": "https://www.instagram.com/liveestetica",
+    "phone": "099 504 499",
+    "waUrl": "https://wa.me/59899504499",
+    "location": "Montevideo - Punta Carretas",
+    "webStatus": "Web catálogo disperso",
+    "painPoint": "Clínica de alta gama con servicios de botox e hilos tensores sin landing de conversión.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=LIVE+Salud+y+Estética+Montevideo+-+Punta+Carretas"
+  },
+  {
+    "id": 33,
+    "name": "Piel Sana (Dra. Castillo)",
+    "niche": "Salud",
+    "sub": "Rejuvenecimiento & Flebología",
+    "instagram": "@pielsana_uy",
+    "igUrl": "https://www.instagram.com/pielsana_uy",
+    "phone": "092 171 515",
+    "waUrl": "https://wa.me/59892171515",
+    "location": "Montevideo - Pocitos",
+    "webStatus": "Web lenta desactualizada",
+    "painPoint": "Gran reputación médica en Pocitos con botones de WhatsApp ocultos en su web actual.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Piel+Sana+(Dra.+Castillo)+Montevideo+-+Pocitos"
+  },
+  {
+    "id": 34,
+    "name": "Dermatología del Este",
+    "niche": "Salud",
+    "sub": "Dermatología Clínica & Láser",
+    "instagram": "@dermatologiadeleste",
+    "igUrl": "https://www.instagram.com/dermatologiadeleste",
+    "phone": "092 858 970",
+    "waUrl": "https://wa.me/59892858970",
+    "location": "Maldonado - Punta del Este",
+    "webStatus": "Web estática plana",
+    "painPoint": "Target extranjero en PDE sin landing tecnológica para agendamiento de pacientes.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Dermatología+del+Este+Maldonado+-+Punta+del+Este"
+  },
+  {
+    "id": 35,
+    "name": "Clínica Avril",
+    "niche": "Salud",
+    "sub": "Medicina Estética & Láser",
+    "instagram": "@clinica_avril",
+    "igUrl": "https://www.instagram.com/clinica_avril",
+    "phone": "099 805 470",
+    "waUrl": "https://wa.me/59899805470",
+    "location": "Montevideo - Parque Rodó",
+    "webStatus": "Web pesada antigua",
+    "painPoint": "Clínica histórica en Bulevar Artigas que requiere modernización a landing responsive.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Clínica+Avril+Montevideo+-+Parque+Rodó"
+  },
+  {
+    "id": 36,
+    "name": "Rhodium Plastic Surgery",
+    "niche": "Salud",
+    "sub": "Rinoplastia & Cirugía Plástica",
+    "instagram": "@rhodium_ps",
+    "igUrl": "https://www.instagram.com/rhodium_ps",
+    "phone": "093 873 857",
+    "waUrl": "https://wa.me/59893873857",
+    "location": "Montevideo - Pocitos (MORE)",
+    "webStatus": "Web catálogo estático",
+    "painPoint": "En el edificio MORE de Pocitos; cirugías de $2k-$6k USD sin landing de rinoplastia ultrasónica.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Rhodium+Plastic+Surgery+Montevideo+-+Pocitos+(MORE)"
+  },
+  {
+    "id": 37,
+    "name": "Fisiomotus",
+    "niche": "Salud",
+    "sub": "Fisioterapia Deportiva & Osteopatía",
+    "instagram": "@fisio_motus_",
+    "igUrl": "https://www.instagram.com/fisio_motus_",
+    "phone": "092 706 970",
+    "waUrl": "https://wa.me/59892706970",
+    "location": "Montevideo - Palermo / Cordón",
+    "webStatus": "**Webnode gratuito**",
+    "painPoint": "🔥 **LEAD URGENTE:** Tienen subdominio gratuito Webnode que destruye su credibilidad médica.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Fisiomotus+Montevideo+-+Palermo+/+Cordón"
+  },
+  {
+    "id": 38,
+    "name": "BeneFisio",
+    "niche": "Salud",
+    "sub": "Fisioterapia y Readaptación",
+    "instagram": "@benefisio",
+    "igUrl": "https://www.instagram.com/benefisio",
+    "phone": "095 199 270",
+    "waUrl": "https://wa.me/59895199270",
+    "location": "Montevideo - Pocitos / P. Batlle",
+    "webStatus": "**Sin sitio web**",
+    "painPoint": "Sin posicionamiento en Google para \"fisioterapia pocitos\" ni \"fisioterapia deportiva\".",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=BeneFisio+Montevideo+-+Pocitos+/+P.+Batlle"
+  },
+  {
+    "id": 39,
+    "name": "Geist Psicología",
+    "niche": "Salud",
+    "sub": "Clínica Psicológica y Vínculos",
+    "instagram": "@geistpsicologia",
+    "igUrl": "https://www.instagram.com/geistpsicologia",
+    "phone": "098 607 006",
+    "waUrl": "https://wa.me/59898607006",
+    "location": "Montevideo - Punta Carretas",
+    "webStatus": "Web fragmentada",
+    "painPoint": "En calle Ellauri; les falta una landing empática con fichas del equipo y WhatsApp confidencial.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Geist+Psicología+Montevideo+-+Punta+Carretas"
+  },
+  {
+    "id": 40,
+    "name": "Apolo Sostenible",
+    "niche": "B2B",
+    "sub": "Paneles Solares & Eficiencia",
+    "instagram": "@apolosostenible",
+    "igUrl": "https://www.instagram.com/apolosostenible",
+    "phone": "092 124 092",
+    "waUrl": "https://wa.me/59892124092",
+    "location": "Canelones / Montevideo",
+    "webStatus": "Web básica anticuada",
+    "painPoint": "Instalaciones de $2.500-$15.000 USD sin calculadora interactiva de ahorro sobre tarifa UTE.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Apolo+Sostenible+Canelones+/+Montevideo"
+  },
+  {
+    "id": 41,
+    "name": "Tienda Solar Uruguay",
+    "niche": "B2B",
+    "sub": "Microgeneración On-Grid / Off-Grid",
+    "instagram": "@tiendasolaruy",
+    "igUrl": "https://www.instagram.com/tiendasolaruy",
+    "phone": "099 760 160",
+    "waUrl": "https://wa.me/59899760160",
+    "location": "Montevideo - Brazo Oriental",
+    "webStatus": "Web minorista estática",
+    "painPoint": "No proyecta sus servicios de ingeniería e instalación industrial B2B llave en mano.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Tienda+Solar+Uruguay+Montevideo+-+Brazo+Oriental"
+  },
+  {
+    "id": 42,
+    "name": "Smart Clima Uruguay",
+    "niche": "B2B",
+    "sub": "Climatización VRF & Multi-Split",
+    "instagram": "@smartclima.uy",
+    "igUrl": "https://www.instagram.com/smartclima.uy",
+    "phone": "099 933 211",
+    "waUrl": "https://wa.me/59899933211",
+    "location": "Montevideo - Pocitos / Buceo",
+    "webStatus": "**Sin sitio web**",
+    "painPoint": "Obras térmicas de $600-$5.000 USD dependiendo enteramente de anuncios en Facebook/IG.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Smart+Clima+Uruguay+Montevideo+-+Pocitos+/+Buceo"
+  },
+  {
+    "id": 43,
+    "name": "Aires Del Este Climatización",
+    "niche": "B2B",
+    "sub": "Climatización de Residencias",
+    "instagram": "@airesdelesteuy",
+    "igUrl": "https://www.instagram.com/airesdelesteuy",
+    "phone": "099 122 191",
+    "waUrl": "https://wa.me/59899122191",
+    "location": "Maldonado - Piriápolis / PDE",
+    "webStatus": "**Web caída (.negocio.site)**",
+    "painPoint": "🔥 **LEAD URGENTE:** Su web de Google Negocio Site fue eliminada y están sin presencia web.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Aires+Del+Este+Climatización+Maldonado+-+Piriápolis+/+PDE"
+  },
+  {
+    "id": 44,
+    "name": "Servicios del Este (SDE)",
+    "niche": "B2B",
+    "sub": "Seguridad Electrónica & CCTV",
+    "instagram": "@serviciosdeleste",
+    "igUrl": "https://www.instagram.com/serviciosdeleste",
+    "phone": "095 976 166",
+    "waUrl": "https://wa.me/59895976166",
+    "location": "Maldonado & Montevideo",
+    "webStatus": "Web genérica baja conv.",
+    "painPoint": "Proyectos de $1k-$6k USD en countries sin calculadora interactiva de zonas de alarma.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Servicios+del+Este+(SDE)+Maldonado+&+Montevideo"
+  },
+  {
+    "id": 45,
+    "name": "Smart Portería Virtual",
+    "niche": "B2B",
+    "sub": "Portería Remota para Edificios",
+    "instagram": "@smartporteria",
+    "igUrl": "https://www.instagram.com/smartporteria",
+    "phone": "096 888 080",
+    "waUrl": "https://wa.me/59896888080",
+    "location": "Montevideo - Tres Cruces",
+    "webStatus": "Web tradicional plana",
+    "painPoint": "Venta a administradores sin calculadora de reducción de hasta 50% en gastos comunes.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Smart+Portería+Virtual+Montevideo+-+Tres+Cruces"
+  },
+  {
+    "id": 46,
+    "name": "TDSE Seguridad Electrónica",
+    "niche": "B2B",
+    "sub": "Alarmas, Cámaras HD & Cercas",
+    "instagram": "@tdse_seguridad",
+    "igUrl": "https://www.instagram.com/tdse_seguridad",
+    "phone": "092 306 987",
+    "waUrl": "https://wa.me/59892306987",
+    "location": "Montevideo - Buceo",
+    "webStatus": "**Sin web (.negocio.site)**",
+    "painPoint": "🔥 **LEAD URGENTE:** Sitio de Google caído, cotizan instalaciones de miles de USD por chat.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=TDSE+Seguridad+Electrónica+Montevideo+-+Buceo"
+  },
+  {
+    "id": 47,
+    "name": "Expreso Pocitos Mudanzas",
+    "niche": "B2B",
+    "sub": "Mudanzas Residenciales Premium",
+    "instagram": "@expresopocitos",
+    "igUrl": "https://www.instagram.com/expresopocitos",
+    "phone": "095 940 399",
+    "waUrl": "https://wa.me/59895940399",
+    "location": "Montevideo - Pocitos",
+    "webStatus": "Web simple sin cotizador",
+    "painPoint": "Mudanzas de alto valor en Pocitos sin formulario guiado paso a paso por ambientes.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Expreso+Pocitos+Mudanzas+Montevideo+-+Pocitos"
+  },
+  {
+    "id": 48,
+    "name": "Estudio Vázquez & Asociados",
+    "niche": "B2B",
+    "sub": "Asesoramiento Jurídico Laboral",
+    "instagram": "@estudiovazquez.uy",
+    "igUrl": "https://www.instagram.com/estudiovazquez.uy",
+    "phone": "091 274 118",
+    "waUrl": "https://wa.me/59891274118",
+    "location": "Montevideo - Ciudad Vieja",
+    "webStatus": "Web tradicional folleto",
+    "painPoint": "Asesoría corporativa a PYMEs sin landing con agendamiento de consulta diagnóstica.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Estudio+Vázquez+&+Asociados+Montevideo+-+Ciudad+Vieja"
+  },
+  {
+    "id": 49,
+    "name": "Pereira & Asociados Contable",
+    "niche": "B2B",
+    "sub": "Outsourcing Contable & DGI",
+    "instagram": "@jpereirayasociados",
+    "igUrl": "https://www.instagram.com/jpereirayasociados",
+    "phone": "094 545 652",
+    "waUrl": "https://wa.me/59894545652",
+    "location": "Montevideo - Pocitos / Centro",
+    "webStatus": "Web básica",
+    "painPoint": "Pierden startups y empresas por no tener comparador de sociedades (SAS vs SRL).",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pereira+&+Asociados+Contable+Montevideo+-+Pocitos+/+Centro"
+  },
+  {
+    "id": 50,
+    "name": "Entrecasa Muebles de Autor",
+    "niche": "B2B",
+    "sub": "Muebles a Medida de Lujo",
+    "instagram": "@entrecasa_uy",
+    "igUrl": "https://www.instagram.com/entrecasa_uy",
+    "phone": "093 510 104",
+    "waUrl": "https://wa.me/59893510104",
+    "location": "Montevideo - Carrasco",
+    "webStatus": "Web catálogo estático",
+    "painPoint": "Muebles de $800-$4.000 USD sin módulo de reserva de visitas VIP para arquitectos.",
+    "priority": "Alta",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Entrecasa+Muebles+de+Autor+Montevideo+-+Carrasco"
+  }
+];
 
-      // ☕ GASTRONOMÍA
-      {
-        id: 13,
-        name: "Cardenal Coffee Roasters",
-        handle: "@cardenalcafe",
-        phone: "092 801 802",
-        rawPhone: "59892801802",
-        address: "Bulevar España 2103",
-        zone: "Cordón / Carrasco",
-        dept: "Montevideo",
-        niche: "Gastronomía",
-        subcat: "Café de Especialidad & Tostaduría",
-        webStatus: "Landing institucional básica",
-        pain: "No cuentan con menú interactivo ni take-away web; venta de café en grano y consultas por WhatsApp.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 14,
-        name: "Obrador Social Club",
-        handle: "@obradorsocialclub",
-        phone: "095 986 330",
-        rawPhone: "59895986330",
-        address: "Dr. Pablo de María 899",
-        zone: "Parque Rodó",
-        dept: "Montevideo",
-        niche: "Gastronomía",
-        subcat: "Café & Panadería Masa Madre",
-        webStatus: "Sin web propia",
-        pain: "Menú en historias de IG; pedidos de panadería y reservas 100% manuales por chat.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 15,
-        name: "La Madriguera Café",
-        handle: "@lamadrigueracafe",
-        phone: "095 010 424",
-        rawPhone: "59895010424",
-        address: "Divina Comedia 1666 Bis",
-        zone: "Carrasco",
-        dept: "Montevideo",
-        niche: "Gastronomía",
-        subcat: "Café de Especialidad & Brunch",
-        webStatus: "Landing estática simple",
-        pain: "Sin e-commerce para take away ni menú QR interactivo; atención telefónica/chat artesanal.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 16,
-        name: "What A Burger",
-        handle: "@whataburger.uy",
-        phone: "093 428 092",
-        rawPhone: "59893428092",
-        address: "Av. Gral. Rivera 2074 bis",
-        zone: "Cordón / Parque Rodó",
-        dept: "Montevideo",
-        niche: "Gastronomía",
-        subcat: "Hamburguesería Artesanal",
-        webStatus: "Sin web propia",
-        pain: "Dependencia de WhatsApp manual y altas comisiones de apps de delivery por falta de webapp propia.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 17,
-        name: "HDP Smash Burger",
-        handle: "@hdp.smashburger",
-        phone: "092 888 894",
-        rawPhone: "59892888894",
-        address: "26 de Marzo 1207",
-        zone: "Pocitos / Cordón",
-        dept: "Montevideo",
-        niche: "Gastronomía",
-        subcat: "Hamburguesería (Smash)",
-        webStatus: "Sin web interactiva",
-        pain: "Pedidos divididos en dos números de WhatsApp sin centralización de comandas ni fidelización web.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 18,
-        name: "Las Primas",
-        handle: "@lasprimas.uy",
-        phone: "091 216 503",
-        rawPhone: "59891216503",
-        address: "Pocitos / Punta Carretas",
-        zone: "Pocitos",
-        dept: "Montevideo",
-        niche: "Gastronomía",
-        subcat: "Rotisería Gourmet & Viandas",
-        webStatus: "Sin web",
-        pain: "Menú del día en historias de Instagram; pedidos y transferencias bancarias 1 a 1 en horas pico.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 19,
-        name: "Cioffi's Pastelería",
-        handle: "@cioffispasteleria",
-        phone: "094 400 477",
-        rawPhone: "59894400477",
-        address: "Malvín",
-        zone: "Malvín",
-        dept: "Montevideo",
-        niche: "Gastronomía",
-        subcat: "Pastelería & Tortas de Eventos",
-        webStatus: "Catálogo estático simple",
-        pain: "Cotizaciones de tortas personalizadas mediante intercambio de fotos y audios por WhatsApp.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 20,
-        name: "La Dulcería de Xime Torres",
-        handle: "@ladulceriadeximetorres",
-        phone: "091 368 084",
-        rawPhone: "59891368084",
-        address: "Jaime Zudáñez 2855",
-        zone: "Pocitos / Carrasco",
-        dept: "Montevideo",
-        niche: "Gastronomía",
-        subcat: "Pastelería Boutique & Salón de Té",
-        webStatus: "Web institucional informativa",
-        pain: "Gran volumen de encargos de tortas enteras saturando los WhatsApps de las sucursales sin tienda directa.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 21,
-        name: "El Rincón de Flo",
-        handle: "@elrincondeflo",
-        phone: "099 989 833",
-        rawPhone: "59899989833",
-        address: "Cordón / Centro",
-        zone: "Cordón",
-        dept: "Montevideo",
-        niche: "Gastronomía",
-        subcat: "Viandas Saludables a Domicilio",
-        webStatus: "Web informativa básica",
-        pain: "Selección semanal de viandas y coordinación de entregas realizado manualmente por WhatsApp.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 22,
-        name: "Café Brasilero",
-        handle: "@cafebrasilero.uy",
-        phone: "092 300 021",
-        rawPhone: "59892300021",
-        address: "Ituzaingó 1447",
-        zone: "Ciudad Vieja",
-        dept: "Montevideo",
-        niche: "Gastronomía",
-        subcat: "Café Histórico (Est. 1877)",
-        webStatus: "Sin reservas online",
-        pain: "Gran afluencia de turistas gestionando reservas de mesa por WhatsApp y llamadas tradicionales.",
-        priority: "MEDIA",
-        template: "B"
-      },
-      {
-        id: 23,
-        name: "Rudy Burgers",
-        handle: "@rudy.burgers",
-        phone: "099 720 180",
-        rawPhone: "59899720180",
-        address: "Pocitos / Punta Carretas",
-        zone: "Pocitos",
-        dept: "Montevideo",
-        niche: "Gastronomía",
-        subcat: "Hamburguesería Artesanal",
-        webStatus: "Web con botones a chat",
-        pain: "La web no tiene pasarela de checkout directo; cada pedido requiere chat con personal de sucursal.",
-        priority: "MEDIA",
-        template: "A"
-      },
-      {
-        id: 24,
-        name: "Meat Boss",
-        handle: "@meatboss.uy",
-        phone: "094 700 304",
-        rawPhone: "59894700304",
-        address: "Buceo / Pocitos",
-        zone: "Buceo",
-        dept: "Montevideo",
-        niche: "Gastronomía",
-        subcat: "Hamburguesas & Cortes Gourmet",
-        webStatus: "Catálogo estático",
-        pain: "Pedidos de hamburguesas y packs parrilleros cerrados manualmente en chat sin cobro instantáneo.",
-        priority: "MEDIA",
-        template: "A"
-      },
+    let currentNiche = 'all';
 
-      // 💇‍♀️ ESTÉTICA & BELLEZA
-      {
-        id: 25,
-        name: "Amatista Centro Bienestar",
-        handle: "@amatistacentrodebienestar",
-        phone: "093 550 510",
-        rawPhone: "59893550510",
-        address: "Colonia 1494 bis esq. Vázquez",
-        zone: "Centro",
-        dept: "Montevideo",
-        niche: "Estética",
-        subcat: "Estética Integral & Masajes",
-        webStatus: "Linktree / Web sin turnero",
-        pain: "Agenda de múltiples cabinas y terapeutas manual por WhatsApp; riesgo de solapamiento en horas pico.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 26,
-        name: "Gassela Peluquería",
-        handle: "@gasselapeluqueria",
-        phone: "093 670 222",
-        rawPhone: "59893670222",
-        address: "Juan María Pérez 2896",
-        zone: "Pocitos",
-        dept: "Montevideo",
-        niche: "Estética",
-        subcat: "Salón Estética & Peluquería",
-        webStatus: "No tiene web propia",
-        pain: "Coordinación 100% manual por WhatsApp; sin catálogo web con tarifas para captar clientas de noche.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 27,
-        name: "Dermokare",
-        handle: "@dermokare",
-        phone: "099 669 418",
-        rawPhone: "59899669418",
-        address: "Pocitos",
-        zone: "Pocitos",
-        dept: "Montevideo",
-        niche: "Estética",
-        subcat: "Medicina Estética Facial/Corporal",
-        webStatus: "Web que deriva a chat",
-        pain: "Pacientes de alto ticket esperando confirmación manual de valoración médica en WhatsApp.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 28,
-        name: "Clínica Nappa Severino",
-        handle: "@clinicanappaseverino",
-        phone: "099 095 779",
-        rawPhone: "59899095779",
-        address: "Av. Sarmiento 2514",
-        zone: "Pocitos / Parque Rodó",
-        dept: "Montevideo",
-        niche: "Estética",
-        subcat: "Clínica Médico-Estética",
-        webStatus: "Landing con botón WhatsApp",
-        pain: "Personal saturado respondiendo consultas de agenda y tarifas en vez de atender pacientes.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 29,
-        name: "ÚNIKA Beauty Studio",
-        handle: "@unikabeautystudiouy",
-        phone: "098 993 144",
-        rawPhone: "59898993144",
-        address: "Izcua Barbat 1195",
-        zone: "Pocitos",
-        dept: "Montevideo",
-        niche: "Estética",
-        subcat: "Maquillaje, Uñas & Lash",
-        webStatus: "Sin turnero online",
-        pain: "Alta demanda de fin de semana para eventos; pérdidas por huecos no señados a tiempo.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 30,
-        name: "Amen Nails Spa",
-        handle: "@amenspa.uy",
-        phone: "092 443 843",
-        rawPhone: "59892443843",
-        address: "Francisco Solano Antuña 2829",
-        zone: "Punta Carretas / Pocitos",
-        dept: "Montevideo",
-        niche: "Estética",
-        subcat: "Spa de Uñas & Manicuría",
-        webStatus: "Web sin turnero en vivo",
-        pain: "Múltiples manicuristas coordinadas por WhatsApp sin selección visual de puesto ni servicio.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 31,
-        name: "Galano Barbershop",
-        handle: "@galanobarbershop",
-        phone: "092 189 849",
-        rawPhone: "59892189849",
-        address: "Bv. España 2508",
-        zone: "Pocitos / Carrasco",
-        dept: "Montevideo",
-        niche: "Estética",
-        subcat: "Barbería Premium & Grooming",
-        webStatus: "Web sin turnero real",
-        pain: "Múltiples sillones gestionados fragmentadamente; pérdida de turnos de último minuto sin lista de espera.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 32,
-        name: "Black Clover Barbershop",
-        handle: "@blackcloverbarbershop",
-        phone: "092 122 006",
-        rawPhone: "59892122006",
-        address: "Alejandro Chucarro 1136",
-        zone: "Pocitos",
-        dept: "Montevideo",
-        niche: "Estética",
-        subcat: "Barbería Moderna",
-        webStatus: "Web básica a WhatsApp",
-        pain: "Barberos deben interrumpir el corte para responder mensajes y coordinar turnos del día.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 33,
-        name: "Peluquería Diamant",
-        handle: "@diamant.peluqueria",
-        phone: "098 555 328",
-        rawPhone: "59898555328",
-        address: "Malvín",
-        zone: "Malvín",
-        dept: "Montevideo",
-        niche: "Estética",
-        subcat: "Peluquería Unisex & Color",
-        webStatus: "No tiene web propia",
-        pain: "Falta de landing donde exhibir portafolio de colorimetría y lista de precios oficial.",
-        priority: "ALTA",
-        template: "C"
-      },
-      {
-        id: 34,
-        name: "N.A. Carrasco Peluquería",
-        handle: "@n.a_carrasco",
-        phone: "098 111 389",
-        rawPhone: "59898111389",
-        address: "Av. Alfredo Arocena 1695",
-        zone: "Carrasco",
-        dept: "Montevideo",
-        niche: "Estética",
-        subcat: "Salón de Autor & Peinados",
-        webStatus: "No cuenta con web",
-        pain: "Salón en arteria principal de Carrasco coordinando citas de modo artesanal por teléfono/chat.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 35,
-        name: "Ana Messano Estilista",
-        handle: "@anamessanoestilista",
-        phone: "095 052 169",
-        rawPhone: "59895052169",
-        address: "Cartagena 1674",
-        zone: "Carrasco",
-        dept: "Montevideo",
-        niche: "Estética",
-        subcat: "Colorimetría & Balayage",
-        webStatus: "No tiene web ni reservas",
-        pain: "Servicios de 3+ horas que requieren seña previa; cancelaciones no avisadas dejan huecos vacíos.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 36,
-        name: "Nails Rache",
-        handle: "@nails.rache",
-        phone: "091 717 384",
-        rawPhone: "59891717384",
-        address: "Gdor. Viana y 8 de Octubre",
-        zone: "La Blanqueada / Unión",
-        dept: "Montevideo",
-        niche: "Estética",
-        subcat: "Manicuría & Esculpidas",
-        webStatus: "Sin web (redes)",
-        pain: "Agendamiento 100% manual sin detalle de tiempos por técnica ni cobro de seña previa.",
-        priority: "MEDIA",
-        template: "B"
-      },
-
-      // 💪 FITNESS & BIENESTAR
-      {
-        id: 37,
-        name: "Anna Alvarez Pilates",
-        handle: "@anna.pilates.studio",
-        phone: "095 504 188",
-        rawPhone: "59895504188",
-        address: "Pocitos",
-        zone: "Pocitos",
-        dept: "Montevideo",
-        niche: "Fitness",
-        subcat: "Pilates Reformer & Cadillac",
-        webStatus: "Web institucional básica",
-        pain: "Dueña gestiona ocupación de camas manualmente; sin autogestión de reposiciones de clases.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 38,
-        name: "Yo Pilates Studio",
-        handle: "@yopilatesstudio",
-        phone: "091 338 422",
-        rawPhone: "59891338422",
-        address: "Cerro Largo 1581",
-        zone: "Cordón",
-        dept: "Montevideo",
-        niche: "Fitness",
-        subcat: "Pilates Reformer & Suspensus",
-        webStatus: "Web sin venta de packs",
-        pain: "Manejo manual de cupos limitados por cama; sobrecarga al cambiar y recuperar turnos.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 39,
-        name: "G7 Pilates",
-        handle: "@g7pilates",
-        phone: "098 457 000",
-        rawPhone: "59898457000",
-        address: "Buricayupí 3061",
-        zone: "Prado / Tres Cruces",
-        dept: "Montevideo",
-        niche: "Fitness",
-        subcat: "Pilates Reformer & Formación",
-        webStatus: "Web básica a WhatsApp",
-        pain: "No cuenta con venta directa de abonos online con asignación de máquina en sedes.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 40,
-        name: "Fluir Pilates Estudio",
-        handle: "@fluir_pilates_studio",
-        phone: "098 284 895",
-        rawPhone: "59898284895",
-        address: "Plutarco 3949",
-        zone: "Buceo",
-        dept: "Montevideo",
-        niche: "Fitness",
-        subcat: "Pilates Reformer & Mat",
-        webStatus: "Web estática",
-        pain: "Gestión manual de asistencia en zona WTC genera fricción con alumnos ejecutivos.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 41,
-        name: "FisioBalance",
-        handle: "@fisiobalance.uy",
-        phone: "095 429 674",
-        rawPhone: "59895429674",
-        address: "Av. Sarmiento 2462",
-        zone: "Punta Carretas",
-        dept: "Montevideo",
-        niche: "Fitness",
-        subcat: "Pilates Terapéutico & Fisio",
-        webStatus: "Web sin turnero en vivo",
-        pain: "Pacientes con patologías coordinando citas 1 a 1 sin recordatorios automáticos.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 42,
-        name: "Pilates Punta del Este",
-        handle: "@pilatespuntadeleste",
-        phone: "099 131 803",
-        rawPhone: "59899131803",
-        address: "Parada 8 Roosevelt",
-        zone: "Punta del Este",
-        dept: "Maldonado",
-        niche: "Fitness",
-        subcat: "Pilates Reformer Postural",
-        webStatus: "Blog simple sin reservas",
-        pain: "Turistas buscando reservar clases sueltas al instante que se frustran por demoras en chat.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 43,
-        name: "Academy Punta del Este",
-        handle: "@academypde",
-        phone: "099 522 820",
-        rawPhone: "59899522820",
-        address: "Calle 24 El Mesana",
-        zone: "Península / PDE",
-        dept: "Maldonado",
-        niche: "Fitness",
-        subcat: "Pilates & Funcional",
-        webStatus: "Web informativa sin turnos",
-        pain: "Clases grupales y pases semanales gestionados manualmente por chat en temporada alta.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 44,
-        name: "Instituto Yoga Carrasco",
-        handle: "@institutoyogacarrasco",
-        phone: "099 904 091",
-        rawPhone: "59899904091",
-        address: "Carrasco",
-        zone: "Carrasco",
-        dept: "Montevideo",
-        niche: "Fitness",
-        subcat: "Yoga Tradicional & Meditación",
-        webStatus: "Sin web con turnero",
-        pain: "Alumnos de Carrasco que demandan sumarse o renovar cuota sin enviar comprobantes por WhatsApp.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 45,
-        name: "BeCross Training",
-        handle: "@becrossuy",
-        phone: "091 659 982",
-        rawPhone: "59891659982",
-        address: "Av. Gonzalo Ramírez 1440",
-        zone: "Palermo / Parque Rodó",
-        dept: "Montevideo",
-        niche: "Fitness",
-        subcat: "Box CrossFit & HIIT",
-        webStatus: "Web informativa",
-        pain: "Consulta de horarios de WODs y clases de prueba 100% manual por WhatsApp.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 46,
-        name: "ACP Training Center",
-        handle: "@acptrainingcenter",
-        phone: "092 493 133",
-        rawPhone: "59892493133",
-        address: "Daniel Muñoz 1997",
-        zone: "Cordón / Tres Cruces",
-        dept: "Montevideo",
-        niche: "Fitness",
-        subcat: "Box CrossFit & Funcional",
-        webStatus: "Sin turnero web",
-        pain: "Drop-ins y clases de prueba coordinados en chat; fuga de prospectos inmediatos.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 47,
-        name: "CrossFit MVD",
-        handle: "@crossfitmvd",
-        phone: "099 630 209",
-        rawPhone: "59899630209",
-        address: "Av. Italia 4334",
-        zone: "Malvín",
-        dept: "Montevideo",
-        niche: "Fitness",
-        subcat: "Box Oficial CrossFit",
-        webStatus: "Presencia en directorios",
-        pain: "Sin landing con turnero directo para agendar primera clase o comprar pases diarios.",
-        priority: "MEDIA",
-        template: "B"
-      },
-      {
-        id: 48,
-        name: "Vital Pilates",
-        handle: "@vitalpilates",
-        phone: "099 804 098",
-        rawPhone: "59899804098",
-        address: "Pocitos / Centro",
-        zone: "Pocitos",
-        dept: "Montevideo",
-        niche: "Fitness",
-        subcat: "Pilates Reformer",
-        webStatus: "Web estática simple",
-        pain: "Desorden en el control de asistencias y reprogramación de clases perdidas.",
-        priority: "MEDIA",
-        template: "B"
-      },
-
-      // 🩺 SALUD
-      {
-        id: 49,
-        name: "BioSmile",
-        handle: "@biosmileuy",
-        phone: "093 937 824",
-        rawPhone: "59893937824",
-        address: "Av. Dr. Juan Bautista Alberdi 6595 bis",
-        zone: "Carrasco",
-        dept: "Montevideo",
-        niche: "Salud",
-        subcat: "Odontología Láser & Alta Gama",
-        webStatus: "Web institucional",
-        pain: "Tratamientos de alto ticket que requieren agenda online y recordatorios anti-ausentismo.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 50,
-        name: "Odontología Pocitos",
-        handle: "@odontologiapocitosuy",
-        phone: "099 889 548",
-        rawPhone: "59899889548",
-        address: "Cavia 2768",
-        zone: "Pocitos",
-        dept: "Montevideo",
-        niche: "Salud",
-        subcat: "Estética Dental & Armonización",
-        webStatus: "Landing básica",
-        pain: "Gestión de turnos y presupuestos en chat; seguimiento post-consulta manual.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 51,
-        name: "Espacio Dental",
-        handle: "@espaciodentaluy",
-        phone: "099 136 932",
-        rawPhone: "59899136932",
-        address: "Carlos Roxlo 1331",
-        zone: "Centro / La Teja / Maroñas",
-        dept: "Montevideo",
-        niche: "Salud",
-        subcat: "Red de Clínicas Dentales",
-        webStatus: "Web informativa básica",
-        pain: "Un solo número central de WhatsApp para 3 sedes; demoras y saturación de consultas.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 52,
-        name: "Clínica Sande",
-        handle: "@clinica_sande",
-        phone: "098 275 020",
-        rawPhone: "59898275020",
-        address: "Bv. Artigas 220, piso 11",
-        zone: "Punta Carretas",
-        dept: "Montevideo",
-        niche: "Salud",
-        subcat: "Nutrición Médica & Obesidad",
-        webStatus: "Web informativa",
-        pain: "Seguimiento de planes de descenso y citas de médicos nutricionistas por chat manual.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 53,
-        name: "Clínica Gioscia",
-        handle: "@clinicagioscia",
-        phone: "091 560 538",
-        rawPhone: "59891560538",
-        address: "Juan D. Jackson 1146",
-        zone: "Palermo / Cordón Sur",
-        dept: "Montevideo",
-        niche: "Salud",
-        subcat: "Fisioterapia & Rehabilitación",
-        webStatus: "Web institucional básica",
-        pain: "Sesiones recurrentes de rehabilitación coordinadas mensaje a mensaje sin turnero.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 54,
-        name: "Centro 3D10",
-        handle: "@centro3d10",
-        phone: "097 039 169",
-        rawPhone: "59897039169",
-        address: "Acevedo Díaz 1959",
-        zone: "Tres Cruces / Cordón",
-        dept: "Montevideo",
-        niche: "Salud",
-        subcat: "Fisioterapia Deportiva",
-        webStatus: "Web básica",
-        pain: "Coordinación de sesiones y readaptación física sin autogestión de horarios.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 55,
-        name: "Centro Psicológico Prado",
-        handle: "@cppuruguay",
-        phone: "092 622 622",
-        rawPhone: "59892622622",
-        address: "Prado",
-        zone: "Prado",
-        dept: "Montevideo",
-        niche: "Salud",
-        subcat: "Clínica Psicológica Integral",
-        webStatus: "Web informativa",
-        pain: "Triaje inicial, asignación de terapeuta y cobro de honorarios realizados a mano en WhatsApp.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 56,
-        name: "Consultorio Dra. Zaidán",
-        handle: "@dralailazaidan.odontologia",
-        phone: "092 219 599",
-        rawPhone: "59892219599",
-        address: "Cordón / Centro",
-        zone: "Cordón",
-        dept: "Montevideo",
-        niche: "Salud",
-        subcat: "Odontología & Prótesis",
-        webStatus: "Sin web propia",
-        pain: "Horarios extendidos y sábados coordinados a mano; resta tiempo en el sillón dental.",
-        priority: "MEDIA",
-        template: "B"
-      },
-      {
-        id: 57,
-        name: "Lic. Eugenia Conte",
-        handle: "@nutrieugeniaconte",
-        phone: "098 408 273",
-        rawPhone: "59898408273",
-        address: "Enrique Martínez 1695",
-        zone: "Cordón / Parque Rodó",
-        dept: "Montevideo",
-        niche: "Salud",
-        subcat: "Nutrición Clínica & Deportiva",
-        webStatus: "Linktree sin checkout",
-        pain: "Envío de pautas en PDF y reprogramaciones presenciales/online por WhatsApp manual.",
-        priority: "MEDIA",
-        template: "B"
-      },
-      {
-        id: 58,
-        name: "NAISHA Fisioterapia",
-        handle: "@fisioterapia.naisha",
-        phone: "093 999 701",
-        rawPhone: "59893999701",
-        address: "Av. Gral. Rivera 3442",
-        zone: "Buceo / Pocitos",
-        dept: "Montevideo",
-        niche: "Salud",
-        subcat: "Fisioterapia & Drenaje",
-        webStatus: "Sin sitio web",
-        pain: "Venta de bonos de sesiones y turnos exclusivamente por chat de WhatsApp.",
-        priority: "MEDIA",
-        template: "B"
-      },
-
-      // 🐾 MASCOTAS
-      {
-        id: 59,
-        name: "La Perruquería",
-        handle: "@laperruqueria.mvd",
-        phone: "094 340 584",
-        rawPhone: "59894340584",
-        address: "Aconcagua 4855",
-        zone: "Malvín",
-        dept: "Montevideo",
-        niche: "Mascotas",
-        subcat: "Peluquería Canina Boutique",
-        webStatus: "Sin web propia",
-        pain: "El estilista canino interrumpe el secado/corte para atender WhatsApp y dar citas.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 60,
-        name: "Dogs Glaam",
-        handle: "@dogs_glaam",
-        phone: "096 839 453",
-        rawPhone: "59896839453",
-        address: "Camino Maldonado km 15",
-        zone: "Punta de Rieles",
-        dept: "Montevideo",
-        niche: "Mascotas",
-        subcat: "Spa & Estética Canina",
-        webStatus: "Sin web (solo IG/WA)",
-        pain: "Cancelaciones a última hora y huecos en agenda por no tener recordatorios automáticos.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 61,
-        name: "Calvin Can",
-        handle: "@calvincanbylu",
-        phone: "Contacto vía Bio",
-        rawPhone: "59899000000",
-        address: "Calle 67 esq. Rodó, Solymar",
-        zone: "Ciudad de la Costa",
-        dept: "Canelones",
-        niche: "Mascotas",
-        subcat: "Spa Canino & Deslanados",
-        webStatus: "Web básica informativa",
-        pain: "Demoras en cotizar según porte/raza; clientes contratan a otra peluquería de la Costa.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 62,
-        name: "Perris & Cia",
-        handle: "@perrisandcia",
-        phone: "095 606 897",
-        rawPhone: "59895606897",
-        address: "Valparaíso 1268 apto 201",
-        zone: "Aguada",
-        dept: "Montevideo",
-        niche: "Mascotas",
-        subcat: "Peluquería Canina & Felina",
-        webStatus: "Sin web",
-        pain: "Coordinación de ingresos escalonados (perro vs gato) en espacio privado por chat.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 63,
-        name: "Al Agua Perruuu",
-        handle: "@alaguaperruuu",
-        phone: "095 979 836",
-        rawPhone: "59895979836",
-        address: "Servicio Móvil a domicilio",
-        zone: "Montevideo & Canelones",
-        dept: "Montevideo",
-        niche: "Mascotas",
-        subcat: "Baño Móvil Canino",
-        webStatus: "Operativa 100% en redes",
-        pain: "Coordinación logística de rutas por barrio y día armada manualmente por mensaje.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 64,
-        name: "Petshop Burbujas",
-        handle: "@petshopburbujass",
-        phone: "097 689 239",
-        rawPhone: "59897689239",
-        address: "Colón / Peñarol",
-        zone: "Colón",
-        dept: "Montevideo",
-        niche: "Mascotas",
-        subcat: "Pet Shop & Peluquería",
-        webStatus: "Sin web",
-        pain: "Mezcla caótica de pedidos de bolsas de alimento y turnos en el mismo chat.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 65,
-        name: "Spa Atenea",
-        handle: "@spaateneaa",
-        phone: "098 789 172",
-        rawPhone: "59898789172",
-        address: "La Fortuna",
-        zone: "Punta del Este",
-        dept: "Maldonado",
-        niche: "Mascotas",
-        subcat: "Spa Canino Premium",
-        webStatus: "Gestión en redes",
-        pain: "Picos de temporada con faltas sin aviso (no-shows) por falta de cobro de seña.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 66,
-        name: "Hogar Peludo",
-        handle: "@hogar.peludo.uy",
-        phone: "091 529 142",
-        rawPhone: "59891529142",
-        address: "Malvín",
-        zone: "Malvín",
-        dept: "Montevideo",
-        niche: "Mascotas",
-        subcat: "Guardería & Hospedaje Canino",
-        webStatus: "Sin web",
-        pain: "Verificación manual de cupos para fines de semana largos y fichas de salud en chat.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 67,
-        name: "Veterinaria La Mascota",
-        handle: "@veterinarialamascota",
-        phone: "098 851 582",
-        rawPhone: "59898851582",
-        address: "Simón Bolívar 1161",
-        zone: "Pocitos",
-        dept: "Montevideo",
-        niche: "Mascotas",
-        subcat: "Clínica Veterinaria & Peluquería",
-        webStatus: "Web institucional",
-        pain: "Recepción saturada atendiendo urgencias mientras intentan agendar baños y ración.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 68,
-        name: "Salvajes Showroom Canino",
-        handle: "@salvajesuy",
-        phone: "Contacto vía Bio",
-        rawPhone: "59899000000",
-        address: "Bv. Artigas 648",
-        zone: "Parque Rodó",
-        dept: "Montevideo",
-        niche: "Mascotas",
-        subcat: "Boutique de Diseño Canino",
-        webStatus: "Catálogo online básico",
-        pain: "Consultas constantes sobre medidas en cm del tórax/cuello de perros por WhatsApp.",
-        priority: "MEDIA",
-        template: "A"
-      },
-
-      // 🌸 OTROS SERVICIOS & REGIONAL
-      {
-        id: 69,
-        name: "Taller Cerámica Horneros",
-        handle: "@hornerosceramica",
-        phone: "091 480 279",
-        rawPhone: "59891480279",
-        address: "Ing. Eduardo Canstatt 3020",
-        zone: "La Blanqueada",
-        dept: "Montevideo",
-        niche: "Otros",
-        subcat: "Academia & Workshops Cerámica",
-        webStatus: "Sin web propia",
-        pain: "Inscripciones mensuales y compra de cupos a talleres por transferencias en chat.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 70,
-        name: "Café Costura MVD",
-        handle: "@cafecosturamvd",
-        phone: "092 110 029",
-        rawPhone: "59892110029",
-        address: "Av. Gral. Rivera 3606",
-        zone: "Buceo / Pocitos",
-        dept: "Montevideo",
-        niche: "Otros",
-        subcat: "Academia Costura & Cowork Textil",
-        webStatus: "Web informativa simple",
-        pain: "Reserva de máquinas por hora y matrícula de talleres coordinadas manualmente.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 71,
-        name: "Casa Arbus",
-        handle: "@casaarbus",
-        phone: "098 981 981",
-        rawPhone: "59898981981",
-        address: "Canelones 1989 esq. Blanes",
-        zone: "Cordón / Parque Rodó",
-        dept: "Montevideo",
-        niche: "Otros",
-        subcat: "Estudio Fotográfico & Escuela",
-        webStatus: "Web portfolio sin turnos",
-        pain: "Alquiler de estudio por hora e inscripciones a talleres con cruce manual de agenda.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 72,
-        name: "Más Fotografía",
-        handle: "@masfotografiauy",
-        phone: "099 519 324",
-        rawPhone: "59899519324",
-        address: "Prado",
-        zone: "Prado",
-        dept: "Montevideo",
-        niche: "Otros",
-        subcat: "Fotografía Infantil & Smash Cake",
-        webStatus: "Web portfolio estática",
-        pain: "Fechas de sesiones familiares y solicitud de señas bancarias 100% por WhatsApp.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 73,
-        name: "Alakazam Tattoo Studio",
-        handle: "@alakazamtattoo",
-        phone: "094 467 079",
-        rawPhone: "59894467079",
-        address: "Av. Agraciada 4084",
-        zone: "Paso Molino / Prado",
-        dept: "Montevideo",
-        niche: "Otros",
-        subcat: "Tattoo Studio & Piercing",
-        webStatus: "Sin web propia",
-        pain: "Cotización manual según tamaño/zona y agenda de turnos con múltiples artistas.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 74,
-        name: "Romántica Flores",
-        handle: "@romanticaflores.uy",
-        phone: "092 518 801",
-        rawPhone: "59892518801",
-        address: "Canelones 1449",
-        zone: "Cordón / Centro",
-        dept: "Montevideo",
-        niche: "Otros",
-        subcat: "Florería & Envíos 24hs",
-        webStatus: "Web muy precaria",
-        pain: "Clientes deben consultar flores y pasar comprobante bancario; fuga de compras de impulso.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 75,
-        name: "Florería La Fleur",
-        handle: "@florerialafleur",
-        phone: "099 660 523",
-        rawPhone: "59899660523",
-        address: "Av. Luis Alberto de Herrera 1248 (WTC)",
-        zone: "Buceo (WTC)",
-        dept: "Montevideo",
-        niche: "Otros",
-        subcat: "Florería Boutique Corporativa",
-        webStatus: "Catálogo a WhatsApp",
-        pain: "Clientes ejecutivos y corporativos demorados por falta de checkout inmediato.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 76,
-        name: "Mad for Modern",
-        handle: "@mad_for_modern",
-        phone: "099 812 272",
-        rawPhone: "59899812272",
-        address: "Ruta 10 esq. Los Remansos",
-        zone: "La Barra / PDE",
-        dept: "Maldonado",
-        niche: "Otros",
-        subcat: "Mueblería Mid-century VIP",
-        webStatus: "Web catálogo estático",
-        pain: "Agenda de visitas exclusivas a showroom y cotizaciones en USD llevadas en chat.",
-        priority: "ALTA",
-        template: "B"
-      },
-      {
-        id: 77,
-        name: "EV Escuela Culinaria",
-        handle: "@evescuelaculinaria",
-        phone: "092 549 038",
-        rawPhone: "59892549038",
-        address: "Maldonado Centro",
-        zone: "Maldonado Centro",
-        dept: "Maldonado",
-        niche: "Otros",
-        subcat: "Academia Gastronómica & Pastelería",
-        webStatus: "Solo WhatsApp en Bio",
-        pain: "Envío de PDFs de temarios y cobro de matrículas mediante transferencias por chat.",
-        priority: "ALTA",
-        template: "A"
-      },
-      {
-        id: 78,
-        name: "Taller del Sol",
-        handle: "@tallerdelsol_uy",
-        phone: "091 273 027",
-        rawPhone: "59891273027",
-        address: "Lagomar & Carrasco",
-        zone: "Lagomar / C. de la Costa",
-        dept: "Canelones",
-        niche: "Otros",
-        subcat: "Taller de Artes & Cerámica",
-        webStatus: "Web sin reservas",
-        pain: "Inscripciones a cursos anuales y workshops intensivos gestionados por WhatsApp.",
-        priority: "ALTA",
-        template: "B"
-      }
-    ];
-
-    // Build Maps URL helper
-    function getMapsUrl(lead) {
-      const q = encodeURIComponent(`${lead.name} ${lead.address} ${lead.dept} Uruguay`);
-      return `https://www.google.com/maps/search/?api=1&query=${q}`;
+    function setNiche(niche) {
+      currentNiche = niche;
+      document.querySelectorAll('.niche-btn').forEach(btn => {
+        if (btn.getAttribute('data-niche') === niche) {
+          btn.className = 'niche-btn active px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-600 text-white transition';
+        } else {
+          btn.className = 'niche-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition';
+        }
+      });
+      renderLeads();
     }
 
-    // Build WhatsApp URL helper
-    function getWhatsAppUrl(lead) {
-      if (!lead.rawPhone || lead.rawPhone.includes("000000")) {
-        return `https://instagram.com/${lead.handle.replace('@','')}`;
-      }
-      let text = "";
-      if (lead.template === "A") {
-        text = `Hola ${lead.name}, ¿cómo están? Les escribe [Tu Nombre] de [Tu Agencia]. Vi su propuesta en Instagram y me encantó. Noté que toman pedidos de forma manual por WhatsApp; armamos tiendas online ágiles integradas con pagos y envíos en Uruguay para que vendan 24/7 sin esfuerzo. ¿Les gustaría ver una propuesta rápida de 5 minutos?`;
-      } else if (lead.template === "B") {
-        text = `Buenas tardes equipo de ${lead.name}, ¿todo bien? Les escribe [Tu Nombre]. Sigo su trabajo en ${lead.zone}. Desarrollamos sistemas de turnero web automático (que se ponen en su Instagram) para que sus clientes agenden solos a cualquier hora y paguen su seña. ¿Tendrían 5 minutos esta semana para una demo sin compromiso?`;
-      } else {
-        text = `Hola ${lead.name}, ¿cómo andan? Mi nombre es [Tu Nombre], diseñador web. Estuve viendo su perfil y tienen un trabajo impecable. Armamos sitios web modernos y ultra rápidos para negocios de ${lead.zone} para captar clientes en Google. ¿Les interesaría ver ejemplos?`;
-      }
-      return `https://wa.me/${lead.rawPhone}?text=${encodeURIComponent(text)}`;
-    }
+    function renderLeads() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const priority = document.getElementById('priorityFilter').value;
+      const grid = document.getElementById('leadsGrid');
+      
+      const filtered = leads.filter(lead => {
+        const matchesNiche = (currentNiche === 'all') || (lead.niche === currentNiche);
+        const matchesPriority = (priority === 'all') || (lead.priority === priority);
+        const matchesSearch = 
+          lead.name.toLowerCase().includes(search) ||
+          lead.location.toLowerCase().includes(search) ||
+          lead.sub.toLowerCase().includes(search) ||
+          lead.phone.includes(search) ||
+          lead.painPoint.toLowerCase().includes(search);
+        
+        return matchesNiche && matchesPriority && matchesSearch;
+      });
 
-    // Render Table
-    function renderTable(data) {
-      const tbody = document.getElementById("tableBody");
-      tbody.innerHTML = "";
+      document.getElementById('count').innerText = filtered.length;
 
-      if (data.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="8" class="text-center py-12 text-slate-500">No se encontraron negocios con los filtros seleccionados.</td></tr>`;
-        document.getElementById("filteredCount").innerText = "Mostrando 0 leads";
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-12 text-center text-slate-500">
+            <i class="fa-solid fa-folder-open text-4xl mb-3 block"></i>
+            <p class="text-sm">No se encontraron negocios con esos filtros.</p>
+          </div>
+        `;
         return;
       }
 
-      data.forEach((lead, idx) => {
-        const mapsUrl = getMapsUrl(lead);
-        const waUrl = getWhatsAppUrl(lead);
-        const igUrl = `https://instagram.com/${lead.handle.replace('@','')}`;
-        const badgeClass = lead.priority === 'ALTA' ? 'badge-alta' : (lead.priority === 'MEDIA' ? 'badge-media' : 'badge-baja');
-
-        const tr = document.createElement("tr");
-        tr.className = "hover:bg-slate-800/40 transition group cursor-pointer";
-        tr.onclick = (e) => {
-          if (e.target.closest('a') || e.target.closest('button')) return;
-          openModal(lead);
-        };
-
-        tr.innerHTML = `
-          <td class="py-3 px-4 text-center font-mono text-slate-500">${lead.id}</td>
-          <td class="py-3 px-4">
-            <div class="font-bold text-slate-200 group-hover:text-emerald-400 transition">${lead.name}</div>
-            <div class="flex items-center gap-2 mt-0.5">
-              <a href="${igUrl}" target="_blank" class="text-[11px] text-sky-400 hover:text-sky-300 hover:underline flex items-center gap-1">
-                <i class="fa-brands fa-instagram"></i> ${lead.handle}
-              </a>
+      grid.innerHTML = filtered.map(lead => `
+        <div class="bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-5 flex flex-col justify-between transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/5 group">
+          <div class="space-y-3">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md ${
+                  lead.niche === 'Construcción' ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20' :
+                  lead.niche === 'Eventos' ? 'bg-pink-500/10 text-pink-400 border border-pink-500/20' :
+                  lead.niche === 'Salud' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' :
+                  'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20'
+                }">
+                  ${lead.sub}
+                </span>
+                <h3 class="text-base font-bold text-white mt-1 group-hover:text-blue-400 transition">${lead.name}</h3>
+              </div>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                lead.priority === 'Alta' ? 'bg-rose-500/20 text-rose-400 border border-rose-500/30' : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
+              }">
+                ${lead.priority === 'Alta' ? '🔥 Alta' : '⭐ Media'}
+              </span>
             </div>
-          </td>
-          <td class="py-3 px-4 font-mono text-slate-300">
-            <span class="flex items-center gap-1.5">
-              <i class="fa-brands fa-whatsapp text-emerald-400"></i> ${lead.phone}
-            </span>
-          </td>
-          <td class="py-3 px-4">
-            <div class="text-slate-300 font-medium">${lead.zone} <span class="text-slate-500 font-normal">(${lead.dept})</span></div>
-            <a href="${mapsUrl}" target="_blank" class="text-[11px] text-rose-400/90 hover:text-rose-300 hover:underline flex items-center gap-1 mt-0.5">
-              <i class="fa-solid fa-location-dot text-rose-400"></i> ${lead.address}
+
+            <div class="space-y-1.5 text-xs text-slate-300">
+              <div class="flex items-center text-slate-400">
+                <i class="fa-solid fa-location-dot text-rose-400 w-4"></i>
+                <span class="truncate">${lead.location}</span>
+              </div>
+              <div class="flex items-center text-slate-400">
+                <i class="fa-brands fa-instagram text-pink-400 w-4"></i>
+                <a href="${lead.igUrl}" target="_blank" class="hover:text-pink-300 transition truncate">${lead.instagram}</a>
+              </div>
+            </div>
+
+            <div class="bg-slate-950/80 border border-slate-800/80 rounded-xl p-3 space-y-1.5 text-xs">
+              <div class="flex items-center space-x-1.5 font-semibold ${
+                lead.webStatus.includes('Sin') || lead.webStatus.includes('caída') || lead.webStatus.includes('Webnode') ? 'text-rose-400' : 'text-amber-400'
+              }">
+                <i class="fa-solid fa-circle-exclamation text-[11px]"></i>
+                <span>${lead.webStatus}</span>
+              </div>
+              <p class="text-slate-400 text-[11px] leading-relaxed">${lead.painPoint}</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2 mt-4 pt-3 border-t border-slate-800/80 text-xs">
+            <a href="${lead.mapsUrl}" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-slate-200 py-2 rounded-xl flex items-center justify-center space-x-1 transition" title="Ver en Google Maps">
+              <i class="fa-solid fa-map-location-dot text-rose-400"></i>
+              <span class="hidden sm:inline">Mapa</span>
             </a>
-          </td>
-          <td class="py-3 px-4">
-            <span class="inline-block bg-slate-800 text-slate-300 px-2 py-0.5 rounded text-[11px] font-medium border border-slate-700">
-              ${lead.subcat}
-            </span>
-          </td>
-          <td class="py-3 px-4 text-slate-300 leading-relaxed text-[11px]">
-            ${lead.pain}
-          </td>
-          <td class="py-3 px-4 text-center">
-            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold ${badgeClass}">
-              ${lead.priority}
-            </span>
-          </td>
-          <td class="py-3 px-4 text-center">
-            <div class="flex items-center justify-center gap-1.5">
-              <a href="${waUrl}" target="_blank" class="p-1.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-400 border border-emerald-500/40 transition" title="Abrir WhatsApp">
-                <i class="fa-brands fa-whatsapp text-sm"></i>
-              </a>
-              <a href="${mapsUrl}" target="_blank" class="p-1.5 rounded-lg bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 border border-rose-500/40 transition" title="Ver en Maps">
-                <i class="fa-solid fa-map-location-dot text-xs"></i>
-              </a>
-              <button onclick="openModalById(${lead.id})" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition" title="Ver Ficha y Pitch">
-                <i class="fa-solid fa-file-lines text-xs"></i>
-              </button>
-            </div>
-          </td>
-        `;
-        tbody.appendChild(tr);
-      });
-
-      document.getElementById("filteredCount").innerText = `Mostrando ${data.length} de ${leadsData.length} leads`;
+            <button onclick="openPitch(${lead.id})" class="bg-slate-800 hover:bg-slate-700 text-slate-200 py-2 rounded-xl flex items-center justify-center space-x-1 transition" title="Ver Pitch de WhatsApp">
+              <i class="fa-solid fa-comment-dots text-blue-400"></i>
+              <span>Pitch</span>
+            </button>
+            <a href="${lead.waUrl}?text=${encodeURIComponent(getPitchText(lead))}" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2 rounded-xl flex items-center justify-center space-x-1 transition shadow-md shadow-emerald-600/20">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>Chat</span>
+            </a>
+          </div>
+        </div>
+      `).join('');
     }
 
-    // Filter logic
-    function applyFilters() {
-      const q = document.getElementById("searchInput").value.toLowerCase().trim();
-      const niche = document.getElementById("nicheFilter").value;
-      const priority = document.getElementById("priorityFilter").value;
-      const zone = document.getElementById("zoneFilter").value;
-
-      const filtered = leadsData.filter(item => {
-        const matchesQuery = !q || 
-          item.name.toLowerCase().includes(q) ||
-          item.handle.toLowerCase().includes(q) ||
-          item.phone.toLowerCase().includes(q) ||
-          item.zone.toLowerCase().includes(q) ||
-          item.address.toLowerCase().includes(q) ||
-          item.subcat.toLowerCase().includes(q) ||
-          item.pain.toLowerCase().includes(q);
-
-        const matchesNiche = (niche === "ALL") || (item.niche === niche);
-        const matchesPriority = (priority === "ALL") || (item.priority === priority);
-        const matchesZone = (zone === "ALL") || 
-          (item.dept.includes(zone) || item.zone.includes(zone) || item.address.includes(zone));
-
-        return matchesQuery && matchesNiche && matchesPriority && matchesZone;
-      });
-
-      renderTable(filtered);
-    }
-
-    function resetFilters() {
-      document.getElementById("searchInput").value = "";
-      document.getElementById("nicheFilter").value = "ALL";
-      document.getElementById("priorityFilter").value = "ALL";
-      document.getElementById("zoneFilter").value = "ALL";
-      renderTable(leadsData);
-    }
-
-    // Modal Handling
-    let activeLead = null;
-
-    function openModalById(id) {
-      const lead = leadsData.find(l => l.id === id);
-      if (lead) openModal(lead);
-    }
-
-    function openModal(lead) {
-      activeLead = lead;
-      document.getElementById("modalName").innerText = lead.name;
-      document.getElementById("modalSubcat").innerText = `${lead.subcat} — ${lead.address} (${lead.zone}, ${lead.dept})`;
-      document.getElementById("modalIGLink").innerText = lead.handle;
-      document.getElementById("modalIGLink").href = `https://instagram.com/${lead.handle.replace('@','')}`;
-      document.getElementById("modalPhone").innerText = lead.phone;
-      document.getElementById("modalWeb").innerText = lead.webStatus;
-      document.getElementById("modalPain").innerText = lead.pain;
-
-      const mapsUrl = getMapsUrl(lead);
-      const waUrl = getWhatsAppUrl(lead);
-
-      document.getElementById("modalMapsBtn").href = mapsUrl;
-      document.getElementById("modalSendWABtn").href = waUrl;
-
-      // Generate Pitch Text
-      let pitch = "";
-      if (lead.template === "A") {
-        pitch = `Hola equipo de ${lead.name}, ¿cómo están? Les escribe [Tu Nombre] de [Tu Estudio/Agencia].\n\nEstuve viendo su cuenta de Instagram y me encanta su propuesta en ${lead.subcat}. Les escribo porque noté que hoy gestionan gran parte de los pedidos y consultas de forma manual por WhatsApp y DM.\n\nEn negocios como el de ustedes en ${lead.zone}, muchas ventas nocturnas o de fin de semana se terminan enfriando porque la clienta no puede comprar al instante o duda con el stock.\n\nNosotros desarrollamos tiendas online ágiles y sencillas de administrar, integradas con Mercado Pago y cálculo automático de envíos por DAC/Mirtrans, listas para vender 24/7.\n\n¿Te gustaría que te prepare una propuesta rápida de 5 minutos en video mostrándote cómo quedaría para ${lead.name}?\n\n¡Un saludo grande!`;
-      } else if (lead.template === "B") {
-        pitch = `Buenas tardes equipo de ${lead.name}, ¿todo bien? Les escribe [Tu Nombre] de [Tu Estudio Digital].\n\nPaso por acá porque sigo su trabajo en ${lead.zone} y se nota la alta demanda que tienen en ${lead.subcat}.\n\nSé por experiencia que coordinar turnos a mano por WhatsApp consume muchísimo tiempo del día: responder dudas de horarios, cancelaciones de último momento o pedir comprobantes de transferencia.\n\nNosotros implementamos turneros web automáticos en su Instagram para que el cliente agende solo en 3 clics y pague la seña online, con recordatorios automáticos por WhatsApp.\n\n¿Tendrían 5 minutos esta semana para mostrarles una demo rápida sin ningún tipo de compromiso?\n\n¡Abrazo!`;
+    function getPitchText(lead) {
+      if (lead.webStatus.includes('Sin') || lead.webStatus.includes('caída') || lead.webStatus.includes('Webnode') || lead.webStatus.includes('Linktree')) {
+        return `Hola equipo de ${lead.name}, ¿cómo están? Les escribe Victor, desarrollador web en Montevideo. Estuve viendo sus trabajos en ${lead.location} y la calidad de lo que hacen es excelente. Noté que hoy no cuentan con un sitio web oficial propio (o su enlace web anterior figura fuera de servicio). En rubros como el de ustedes, los clientes buscan en Google antes de contratar. Nosotros creamos páginas web modernas, rápidas y optimizadas para celulares en 5 días para que las consultas les lleguen directo a su WhatsApp. ¿Les gustaría que les prepare una propuesta rápida sin costo mostrando cómo quedaría la web para ${lead.name}? ¡Un saludo grande!`;
       } else {
-        pitch = `Hola equipo de ${lead.name}, ¿cómo andan? Mi nombre es [Tu Nombre], especialista en desarrollo y diseño web.\n\nEstuve buscando opciones de ${lead.subcat} en ${lead.zone} y encontré su perfil. La propuesta visual en redes es excelente, pero noté que su web actual no está adaptada para celulares ni orientada a captar clientes de Google.\n\nArmamos sitios web ultra rápidos y optimizados para celulares para que los clientes de ${lead.zone} los encuentren primero y contacten directamente a su WhatsApp.\n\n¿Les gustaría que les comparta ejemplos de proyectos similares que hicimos en Uruguay?\n\n¡Que tengan excelente semana!`;
+        return `Buenas tardes equipo de ${lead.name}, ¿todo bien? Mi nombre es Victor, especialista en rediseño web en Uruguay. Sigo sus proyectos en ${lead.location} y sé que tienen un estándar muy alto. Estuve navegando su sitio web desde el celular y noté que le cuesta cargar rápido y no refleja la calidad visual que muestran en redes. Hoy el 85% de las personas navega desde el teléfono. Nos dedicamos a modernizar sitios web en 5 a 7 días, dejándolos ultra veloces y listos para generar consultas directas a WhatsApp. ¿Les gustaría que les comparta ejemplos de webs modernas que hicimos en Uruguay? ¡Muchas gracias y buenas ventas!`;
       }
+    }
 
-      document.getElementById("modalPitch").value = pitch;
-      document.getElementById("leadModal").classList.remove("hidden");
+    function openPitch(leadId) {
+      const lead = leads.find(l => l.id === leadId);
+      if (!lead) return;
+      
+      document.getElementById('modalLeadName').innerText = lead.name;
+      document.getElementById('modalLeadSub').innerText = `${lead.sub} • ${lead.location}`;
+      const pitch = getPitchText(lead);
+      document.getElementById('modalPitchText').value = pitch;
+      document.getElementById('modalWaBtn').href = `${lead.waUrl}?text=${encodeURIComponent(pitch)}`;
+      document.getElementById('copyBtnText').innerText = 'Copiar';
+      document.getElementById('pitchModal').classList.remove('hidden');
     }
 
     function closeModal() {
-      document.getElementById("leadModal").classList.add("hidden");
-      activeLead = null;
+      document.getElementById('pitchModal').classList.add('hidden');
     }
 
-    function copyPitchText() {
-      const txt = document.getElementById("modalPitch");
-      txt.select();
-      navigator.clipboard.writeText(txt.value);
-      const btn = document.getElementById("copyPitchBtn");
-      btn.innerHTML = `<i class="fa-solid fa-check"></i> ¡Copiado!`;
-      setTimeout(() => {
-        btn.innerHTML = `<i class="fa-regular fa-copy"></i> Copiar Mensaje`;
-      }, 2000);
-    }
-
-    function copyAllPhones() {
-      const phones = leadsData.filter(l => l.rawPhone && !l.rawPhone.includes("000000")).map(l => `${l.name}: ${l.phone} (+${l.rawPhone})`).join("\n");
-      navigator.clipboard.writeText(phones);
-      alert("¡Se copiaron los números de WhatsApp de los 78 leads al portapapeles!");
+    function copyPitch() {
+      const textarea = document.getElementById('modalPitchText');
+      navigator.clipboard.writeText(textarea.value).then(() => {
+        document.getElementById('copyBtnText').innerText = '¡Copiado!';
+        setTimeout(() => {
+          document.getElementById('copyBtnText').innerText = 'Copiar';
+        }, 2000);
+      });
     }
 
     function exportCSV() {
-      const headers = ["ID", "Nombre Comercial", "Instagram", "Telefono", "WhatsApp Link", "Google Maps Link", "Direccion", "Barrio", "Departamento", "Nicho", "Subcategoria", "Estado Web", "Punto de Dolor", "Prioridad"];
-      const rows = leadsData.map(l => [
+      const headers = ["ID", "Negocio", "Nicho", "Subcategoría", "Instagram", "WhatsApp", "Ubicación", "Estado Web", "Diagnóstico Web", "Prioridad", "Google Maps URL"];
+      const rows = leads.map(l => [
         l.id,
         `"${l.name}"`,
-        `"${l.handle}"`,
-        `"${l.phone}"`,
-        `"${getWhatsAppUrl(l)}"`,
-        `"${getMapsUrl(l)}"`,
-        `"${l.address}"`,
-        `"${l.zone}"`,
-        `"${l.dept}"`,
         `"${l.niche}"`,
-        `"${l.subcat}"`,
+        `"${l.sub}"`,
+        `"${l.instagram}"`,
+        `"${l.phone}"`,
+        `"${l.location}"`,
         `"${l.webStatus}"`,
-        `"${l.pain.replace(/"/g, '""')}"`,
-        `"${l.priority}"`
+        `"${l.painPoint.replace(/"/g, '""')}"`,
+        `"${l.priority}"`,
+        `"${l.mapsUrl}"`
       ]);
 
-      let csvContent = "\uFEFF" + headers.join(",") + "\n" + rows.map(e => e.join(",")).join("\n");
-      const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-      const url = URL.createObjectURL(blob);
+      const csvContent = "data:text/csv;charset=utf-8,\uFEFF" + [headers.join(","), ...rows.map(e => e.join(","))].join("\n");
+      const encodedUri = encodeURI(csvContent);
       const link = document.createElement("a");
-      link.setAttribute("href", url);
-      link.setAttribute("download", "leads_uruguay_master_database.csv");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "50_Leads_Uruguay_Web_2026.csv");
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     }
 
-    // Initialize on load
-    window.addEventListener("DOMContentLoaded", () => {
-      renderTable(leadsData);
-    });
+    renderLeads();
   </script>
 </body>
 </html>
