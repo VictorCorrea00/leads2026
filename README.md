@@ -1,9 +1,9 @@
-﻿# 🇺🇾 Leads Uruguay - Web Design & Dev B2B Dashboard
+﻿# 🇺🇾 Leads Uruguay 2026 - Web Design & Dev B2B Dashboard
 
 Dashboard de prospección comercial interactivo con **78 leads reales y verificados en Uruguay** para venta de sitios web, e-commerce y sistemas de turnero automatizados.
 
 ## 🚀 Live Demo en GitHub Pages
-👉 **[Ver Dashboard Online](https://victorcorrea00.github.io/leads-uruguay-dashboard/)**
+👉 **[Ver Dashboard Online](https://victorcorrea00.github.io/leads2026/)**
 
 ## ✨ Funcionalidades
 - 🔍 **Buscador en tiempo real** por nombre, handle, teléfono, zona o dolor.
@@ -14,10 +14,10 @@ Dashboard de prospección comercial interactivo con **78 leads reales y verifica
 - 📋 **Modal de Ficha con Pitch de Ventas** listo para copiar en 1 clic.
 - 📥 **Exportador CSV** para importar a HubSpot, Notion, Google Sheets o Excel.
 
-## 📂 Estructura del Repositorio
-- \index.html\: Dashboard interactivo (Tailwind CSS, Alpine/Vanilla JS, FontAwesome).
+## 📂 Archivos del Proyecto
+- \index.html\: Dashboard interactivo (Tailwind CSS, Vanilla JS, FontAwesome).
 - \leads_prospector_uruguay.md\: Playbook comercial con Top 10 leads y 3 plantillas de WhatsApp.
-- \dashboard_leads_uruguay.md\: Tablas completas en Markdown con todos los enlaces.
+- \dashboard_leads_uruguay.md\: Tablas maestras en Markdown con todos los enlaces directos.
 
 ---
 *Desarrollado para prospección comercial en Montevideo, Maldonado y Canelones.*
